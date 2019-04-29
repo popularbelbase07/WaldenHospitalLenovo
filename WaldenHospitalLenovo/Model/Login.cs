@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace WaldenHospitalLenovo.Model
 {
-    class Login
+   public class Login
     {
+        
+        //Properties
+        public string UserName { get; set; }
+
+        public string Password { get; set; }
+
+        public Login(string userName, string password)
+        {
+            UserName = userName;
+            Password = password;
+        }
+
     }
 }
