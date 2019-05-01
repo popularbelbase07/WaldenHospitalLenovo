@@ -120,6 +120,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Login.cs" />
+    <Compile Include="ViewPage\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewPage\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
