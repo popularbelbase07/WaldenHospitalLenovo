@@ -34,7 +34,7 @@
         <PasswordBox VerticalAlignment="Top" HorizontalAlignment="Left" Password="*******" 
                      Margin="300,242.333,0,0" Grid.Row="2" Height="62" Width="320"/>
         <Button Content="Login" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="380,372,0,0"
-                Grid.Row="1" Height="61" Width="160" FontSize="30" FontWeight="Bold" Background="SlateBlue"/>
+                Grid.Row="1" Height="61" Width="160" FontSize="30" FontWeight="Bold" Background="SlateBlue" Click="Button_Click"/>
 
         </Grid>
     </Grid>
