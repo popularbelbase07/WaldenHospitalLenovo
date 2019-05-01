@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="WaldenHospitalLenovo.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WaldenHospitalLenovo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="869" Margin="60,79,0,0" VerticalAlignment="Top" Width="1369">
+            <TextBlock HorizontalAlignment="Left" Margin="498,0,0,0" Text="Walden Hospital" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top" Height="137" Width="388"/>
+
+        </Grid>
+        <Button Content="Log Out" HorizontalAlignment="Left" Margin="1251,79,0,0" VerticalAlignment="Top" Background="Red" FontSize="20" Width="140" Height="55"/>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="658,424,0,0" VerticalAlignment="Top" Width="100"/>
+        <Grid HorizontalAlignment="Left" Height="753" Margin="84,194,0,0" VerticalAlignment="Top" Width="1368">
+            <TextBlock HorizontalAlignment="Left" Margin="56,10,0,0" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top" Height="120" Width="230"><Run Text="    "/><Run Text="MENU"/></TextBlock>
+            <Button Content="Registration&#xD;&#xA; Clerk" FontSize="30" HorizontalAlignment="Left" Margin="56,129,0,0" VerticalAlignment="Top" Height="112" Width="251"/>
+            <Button Content=" Doctor" FontSize="30" HorizontalAlignment="Left" Margin="56,245,0,0" VerticalAlignment= "Top" Height="127" Width="251"/>
+            <Button Content=" Lab Technician" FontSize="30" HorizontalAlignment="Left" Margin="56,377,0,0" VerticalAlignment="Top" Height="133" Width="256"/>
+            <Button Content="Billing Clerk" FontSize="30" HorizontalAlignment="Left" Margin="56,515,0,0" VerticalAlignment="Top" Height="95" Width="256"/>
+            <Button Content="Contact" FontSize="30" HorizontalAlignment="Left" Margin="56,615,0,0" VerticalAlignment="Top" Height="128" Width="251"/>
+            <Grid HorizontalAlignment="Left" Height="979" Margin="307,-180,0,0" VerticalAlignment="Top" Width="1123">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="339*"/>
+                    <RowDefinition Height="377*"/>
+                </Grid.RowDefinitions>
+                <CalendarDatePicker PlaceholderText="pick a date" Header="calender" HorizontalAlignment="Left" Margin="538,102,0,0" Grid.Row="1" VerticalAlignment="Top" Height="134" Width="355"/>
+
+                <ComboBox HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Height="126" Width="318"/>
+                <Button Content="Patient Registration" FontSize="30" HorizontalAlignment="Left" Margin="499,0,0,0" VerticalAlignment="Center" Height="115" Width="290"/>
+                <ComboBox HorizontalAlignment="Left"  Margin="10,220,0,0" Grid.Row="1" VerticalAlignment="Top" Height="145" Width="319">
+
+                </ComboBox>
+                <TimePicker HorizontalAlignment="Left" Margin="538,258,0,0" Grid.Row="1" VerticalAlignment="Top" Height="73" Width="355"/>
+                <TextBlock HorizontalAlignment="Left" FontSize="30" Margin="10,169,0,0" Grid.Row="1" Text="Doctor" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="160"/>
+
+            </Grid>
+
+
+        </Grid>
+
+
+    </Grid>
+</Page>
