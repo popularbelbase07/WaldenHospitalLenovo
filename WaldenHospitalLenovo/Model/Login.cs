@@ -16,11 +16,20 @@ namespace WaldenHospitalLenovo.Model
         
         //Constructor
 
+        public Login()
+        {
+            
+        }
+
         public Login(string userName, string password)
         {
             UserName = userName;
             Password = password;
         }
 
+        public override string ToString()
+        {
+            return $"{UserName}-{Password}";
+        }
     }
 }

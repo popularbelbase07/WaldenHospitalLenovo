@@ -29,7 +29,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" Orientation="Vertical">
-            <Button Content="Log Out" HorizontalAlignment="Center" Background="Red" FontSize="20" Width="140" VerticalAlignment="Center"  />
+            <Button Content="Log Out" HorizontalAlignment="Center" Background="Red" FontSize="20" Width="140" VerticalAlignment="Center" Click="Button_Click"  />
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" Orientation="Vertical" >
             <TextBlock  Text="Menu"  FontWeight="ExtraBold"   VerticalAlignment="Center" HorizontalAlignment="Center" />

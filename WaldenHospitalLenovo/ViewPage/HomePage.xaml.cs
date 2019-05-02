@@ -39,5 +39,10 @@ namespace WaldenHospitalLenovo.ViewPage
         {
             throw new NotImplementedException();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Login));
+        }
     }
 }
