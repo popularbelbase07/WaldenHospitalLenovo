@@ -27,12 +27,14 @@ namespace WaldenHospitalLenovo
         {
             this.InitializeComponent();
             // 
-            //
+            //  abc ..........
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(bl));
+            Frame.Navigate(typeof(HomePage));
         }
     }
 }
