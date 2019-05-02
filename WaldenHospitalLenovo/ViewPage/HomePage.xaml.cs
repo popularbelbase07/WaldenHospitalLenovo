@@ -28,9 +28,16 @@ namespace WaldenHospitalLenovo.ViewPage
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+       
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Login));
+
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
