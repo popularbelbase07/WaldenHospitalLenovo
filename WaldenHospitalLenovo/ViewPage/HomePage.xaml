@@ -71,15 +71,5 @@
 
 </StackPanel>
 
-        <!--<StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" Orientation="Vertical">
-            <CalendarDatePicker PlaceholderText="pick a date" Header="calender" 
-                                HorizontalAlignment="Left" Margin="400,0,0,0"
-                                VerticalAlignment="Top" Height="50" Width="250" />
-            
-            <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Stretch" Orientation="Vertical">
-                           </StackPanel>
-
-        </StackPanel>-->
-
     </Grid>
 </Page>
