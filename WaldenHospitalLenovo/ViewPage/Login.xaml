@@ -18,7 +18,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,759.333,0" Grid.RowSpan="2"/>
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,759.333,0"
+              Grid.RowSpan="2"/>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"  
                    Text="Login Page" FontSize="40" Width="221" Grid.Column="2" Margin="195.667,10.333,0,0"
                    FontWeight="Bold" Height="73" Grid.Row="2"/>
