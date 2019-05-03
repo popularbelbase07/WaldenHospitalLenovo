@@ -8,25 +8,28 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid HorizontalAlignment="Center" Height="980" Margin="0,0,0,0" VerticalAlignment="Center" Background="Aquamarine" Width="1480">
-
-        <TextBlock HorizontalAlignment="Left" Margin="208,131,0,0" Text="Full Name" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="214"/>
-        <TextBox HorizontalAlignment="Left" Margin="427,131,0,0" Text="" VerticalAlignment="Top" Height="61" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" FontWeight="ExtraBold" FontStretch="Expanded" Margin="547,10,0,0" Text="Patient Registration"  IsColorFontEnabled="True" Foreground="Brown"  FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,244,0,0" Text="Address" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="86" Width="89"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,316,0,0" Text="Gender" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="45"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,406,0,0" Text="Patient ID" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Height="67"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,471,0,0" Text="DOB" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="90"/>
-        <TextBox HorizontalAlignment="Left" Margin="427,244,0,0" Text="" VerticalAlignment="Top" HorizontalTextAlignment="Center" Height="61" Width="150" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" TextChanged="TextBox_TextChanged">
-            <TextBox.RenderTransform>
-                <CompositeTransform Rotation="0.652"/>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="427,316,0,0" Text="" VerticalAlignment="Top" Height="61" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Margin="427,406,0,0" Text="" VerticalAlignment="Top" Height="61" Width="150"/>
-        <DatePicker HorizontalAlignment="Left" Margin="427,484,0,0" VerticalAlignment="Top" Height="62" Width="375"/>
-        <Button Content="Save" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" HorizontalAlignment="Left" Margin="427,551,0,0" VerticalAlignment="Top" Height="50" Width="119"/>
-        <Button Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  HorizontalAlignment="Left" Margin="615,551,0,0" VerticalAlignment="Top" Height="50" Width="123"/>
-
+    <Grid Background="Bisque">
+         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Text="Patient Registration page" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBold" Foreground="Teal"></TextBlock>
+        </StackPanel>
+        <StackPanel  >
+            <TextBlock HorizontalAlignment="Left" Margin="208,100,0,0" Text="Full Name" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+            <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+            <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+            <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+            <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Gender" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+            <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+            <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Date Of Birth" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+            <DatePicker HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400"/>
+            <Button Content="Save" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
+                    HorizontalAlignment="Left"  Margin="600,35,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
+            <Button Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
+                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
+    </StackPanel>
+       
     </Grid>
 </Page>
