@@ -9,77 +9,98 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+       <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="*"/>
+           <ColumnDefinition Width="4*"/>
+           
+           </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="130px"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="3*" />
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" Orientation="Vertical">
-            <TextBlock  Text="Walden Hospital"  FontWeight="ExtraBold"  TextWrapping="Wrap" VerticalAlignment="Center" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" Orientation="Vertical">
-            <Button Content="Log Out" HorizontalAlignment="Center" Background="Red" FontSize="20" Width="140" VerticalAlignment="Center"  />
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" Orientation="Vertical" >
-            <TextBlock  Text="Menu"  FontWeight="ExtraBold"   VerticalAlignment="Center" HorizontalAlignment="Center" />
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
-            <Button Content="Book Appointment" HorizontalAlignment="Left"  Background="Green" FontSize="20" Width="200" VerticalAlignment="Center"  />
-            <Button Content="New Registration" Background="Green" FontSize="20" Width="200" Margin="20" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
-            <Button Content="Registration Clerk" Background="Green" FontSize="20" Width="200" Height="100" Margin="20" />
-        </StackPanel>
-        <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
-            <Button Content="Doctor" Background="Green" FontSize="20" Width="200" Height="100" Margin="20"  />
-        </StackPanel>
-        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
-            <Button Content="Lab Technician" Background="Green" FontSize="20" Width="200" Height="100" Margin="20"  />
-        </StackPanel>
-        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
-            <Button Content="Billing Clerk" Background="Green" FontSize="20" Width="200" Height="100" Margin="20"  />
-        </StackPanel>
-        <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal">
-            <Button Content="Contact" Background="Green" FontSize="20" Width="200" Height="100" Margin="20"  />
-        </StackPanel>
-
-
-        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBox Text="Search"  HorizontalAlignment="Left" Width="120" Height="40"/>
-            <Button Content="button" Margin="30" Height="50" />
-            <CalendarDatePicker PlaceholderText="pick a date" Header="calender" 
-                                HorizontalAlignment="Left" Margin="200,0,0,0"
-                                VerticalAlignment="Top" Height="50" Width="250" />
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal"
+                    Background="DeepSkyBlue">
+            
+            <TextBlock Text="WALDENAPP" FontWeight="Black" VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="90,40,10,10" FontSize="25" Foreground="Cyan">
+                 </TextBlock> 
         </StackPanel>
         
-    <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal">
-        <TextBlock Text="Doctor's Name" VerticalAlignment="Top" />
-        <ComboBox VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="150"></ComboBox>
-        <TimePicker HorizontalAlignment="Left" Margin="200,0,0,0" VerticalAlignment="Top" Height="50" Width="250"/>
+        
+        
+        
 
-</StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Background="DeepSkyBlue">
 
-        <!--<StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" Orientation="Vertical">
-            <CalendarDatePicker PlaceholderText="pick a date" Header="calender" 
-                                HorizontalAlignment="Left" Margin="400,0,0,0"
-                                VerticalAlignment="Top" Height="50" Width="250" />
+            <Button Content="Log Out" 
+                    Margin="50,50,10,10" HorizontalAlignment="Right"  Background="BlueViolet"  BorderBrush="Transparent" 
+               Foreground="AliceBlue"  FontSize="25" Width="140" VerticalAlignment="Center"/>
+
+            <TextBlock  Text="WALDEN HOSPITAL" FontWeight="ExtraBold" FontSize="30"  
+                        Width="300" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Margin="0,-50,50,50" Foreground="Cyan">
+            </TextBlock>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="Violet">
             
-            <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Stretch" Orientation="Vertical">
-                           </StackPanel>
+            <Button Content="REG CLERK"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Width="300" Height="75"
+                    FontSize="25" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+            <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
+            
+            <Button Content="DOCTOR"
+                    Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Width="300" Height="75"
+                    FontSize="25" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+            <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
+            
+            <Button Content="LAB TECH"
+                    Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Width="300" Height="75"
+                    FontSize="25" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+            <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/> 
+            
+            <Button Content="BILLING CLERK"
+                    Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Width="300" Height="75"
+                    FontSize="25" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+            <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>  
+            
+            <Button Content="CONTACT"
+                    Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Width="300" Height="75"
+                    FontSize="25" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+            <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/> 
+        </StackPanel>
+            
+              <StackPanel Grid.Row="1" Grid.Column="1" Background="CadetBlue">
+                  
+                  <Button Content="SEARCH PATIENT" Margin="150,70,0,0"
+                          Width="160" Height="40" FontSize="18" Foreground="White" BorderBrush="Transparent"
+                          Background="Transparent"/>
+                  
+                  <CalendarDatePicker PlaceholderText="select a date" Header="CALANDER" FontSize="18"
+                          HorizontalAlignment="Right" Margin="150,-70,350,0" Foreground="White"
+                          BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
+                          </CalendarDatePicker>
+                  <Button Content="Doctor Name" Margin="160,90" FontSize="18"
+                          Foreground="White" BorderBrush="Transparent" Background="Transparent"/> 
+                  <TimePicker Margin="520,-120,-300,200"></TimePicker>
+        </StackPanel>      
+                    
+                    
+       
 
-        </StackPanel>-->
+       
+
+
+        
+    
 
     </Grid>
 </Page>
