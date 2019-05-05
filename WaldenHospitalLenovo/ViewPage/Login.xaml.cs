@@ -37,5 +37,7 @@ namespace WaldenHospitalLenovo
         {
             Frame.Navigate(typeof(HomePage));
         }
+
+       
     }
 }
