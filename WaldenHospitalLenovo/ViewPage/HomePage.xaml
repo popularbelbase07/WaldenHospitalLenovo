@@ -28,9 +28,6 @@
                  </TextBlock> 
         </StackPanel>
         
-        
-        
-        
 
         <StackPanel Grid.Row="0" Grid.Column="1" Background="DeepSkyBlue">
 
@@ -42,7 +39,6 @@
                         Width="300" VerticalAlignment="Center" HorizontalAlignment="Center"
                         Margin="0,-50,50,50" Foreground="Cyan">
             </TextBlock>
-
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Background="Violet">
@@ -78,29 +74,21 @@
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/> 
         </StackPanel>
             
-              <StackPanel Grid.Row="1" Grid.Column="1" Background="CadetBlue">
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="CadetBlue">
                   
-                  <Button Content="SEARCH PATIENT" Margin="150,70,0,0"
+             <Button Content="SEARCH PATIENT" Margin="150,70,0,0"
                           Width="160" Height="40" FontSize="18" Foreground="White" BorderBrush="Transparent"
                           Background="Transparent"/>
                   
-                  <CalendarDatePicker PlaceholderText="select a date" Header="CALANDER" FontSize="18"
+             <CalendarDatePicker PlaceholderText="select a date" Header="CALANDER" FontSize="18"
                           HorizontalAlignment="Right" Margin="150,-70,350,0" Foreground="White"
                           BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
                           </CalendarDatePicker>
-                  <Button Content="Doctor Name" Margin="160,90" FontSize="18"
+                  
+             <Button Content="Doctor Name" Margin="160,90" FontSize="18"
                           Foreground="White" BorderBrush="Transparent" Background="Transparent"/> 
                   <TimePicker Margin="520,-120,-300,200"></TimePicker>
         </StackPanel>      
-                    
-                    
-       
-
-       
-
-
-        
-    
-
+      
     </Grid>
 </Page>
