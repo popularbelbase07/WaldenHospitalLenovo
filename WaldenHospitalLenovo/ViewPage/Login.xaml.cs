@@ -26,10 +26,7 @@ namespace WaldenHospitalLenovo
         public MainPage()
         {
             this.InitializeComponent();
-            // 
-            //  abc ..........
-
-
+           
 
         }
 
