@@ -42,8 +42,6 @@ namespace WaldenHospitalLenovo.ViewModel
 
                 }
 
-
-
             }
 
         }
@@ -52,9 +50,9 @@ namespace WaldenHospitalLenovo.ViewModel
         {
             return new List<Login>()
             {
-                new Login("User1" , "abc"),
-                new Login("User2" , "xyz"),
-                new Login("User3" , "123"),
+                new Login("User1" , "Khem"),
+                new Login("User2" , "Popular"),
+                new Login("User3" , "Ganga"),
 
             };
         }
