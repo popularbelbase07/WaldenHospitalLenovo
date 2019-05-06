@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -42,7 +43,11 @@ namespace WaldenHospitalLenovo.ViewPage
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Login));
+            Frame.Navigate(typeof(LoginPage));
+           //Type type = typeof(Login);
+           //FrameNavigate.ActivateFrameNavigation(type);
+
+           //  Frame.Navigate(typeof(Login));
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

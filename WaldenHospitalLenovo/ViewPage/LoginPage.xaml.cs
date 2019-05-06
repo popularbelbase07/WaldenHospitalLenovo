@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using WaldenHospitalLenovo.ViewModel;
 using WaldenHospitalLenovo.ViewPage;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -21,9 +22,9 @@ namespace WaldenHospitalLenovo
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class LoginPage : Page
     {
-        public MainPage()
+        public LoginPage()
         {
             this.InitializeComponent();
             // 
@@ -32,7 +33,15 @@ namespace WaldenHospitalLenovo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(HomePage));
+          //  Frame.Navigate(typeof(HomePage));
+
+          LoginVm vm = new LoginVm();
+          string userName = UserName.Text;
+          string password = PasswordBox.Password;
+
+          vm.LoginPage(userName , password);
+          DataContext = vm;
+
         }
     }
 }

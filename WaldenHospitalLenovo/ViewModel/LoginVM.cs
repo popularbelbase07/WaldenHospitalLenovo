@@ -14,20 +14,18 @@ namespace WaldenHospitalLenovo.ViewModel
     public class LoginVm
     {
         public List<Login> ListLogin { get; set; }
-        public Login CheckAuthentication { get; set; }
-
+       
         public LoginVm()
         {
-            CheckAuthentication = new Login();
             ListLogin = GetLoginFromDb();
 
         }
-        public async void LoginPage()
+        public async void LoginPage(string userName , string password)
         {
             foreach (var login in ListLogin)
             {
 
-                if ((login.UserName == CheckAuthentication.UserName ) && (login.Password == CheckAuthentication.Password))
+                if ((login.UserName == userName ) && (login.Password == password))
                 {
                     Type homeType = typeof(HomePage);
                     FrameNavigate.ActivateFrameNavigation(homeType);
