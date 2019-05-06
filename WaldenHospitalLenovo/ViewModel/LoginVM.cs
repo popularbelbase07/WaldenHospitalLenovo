@@ -15,6 +15,7 @@ namespace WaldenHospitalLenovo.ViewModel
     {
         public List<Login> ListLogin { get; set; }
         public Login CheckAuthentication { get; set; }
+
         public LoginVm()
         {
             CheckAuthentication = new Login();

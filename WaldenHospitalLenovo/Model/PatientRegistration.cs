@@ -58,5 +58,10 @@ namespace WaldenHospitalLenovo.Model
             
         }
         #endregion
-    }
+
+        public override string ToString()
+        {
+            return $"FullName : {FullName},Address :{Address} ,Gender :{Gender},Date Of Birth :{DateOfBirth}";
+        }
+   }
 }
