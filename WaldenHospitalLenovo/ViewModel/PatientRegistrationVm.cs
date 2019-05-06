@@ -14,12 +14,23 @@ namespace WaldenHospitalLenovo.ViewModel
    public class PatientRegistrationVm : NotifyPropertyChanged
     {
         public PatientRegistration AddPatient { get; set; }
+        public List<PatientRegistration> listRegistration { get; set; }
 
         public PatientRegistrationVm()
         {
             AddPatient = new PatientRegistration();
+            listRegistration = CreateSaveMethod();
 
         }
-       
+
+        public List<PatientRegistration> CreateSaveMethod()
+        {
+            return new List<PatientRegistration>()
+            {
+           
+            };
+        }
+
+
     }
 }

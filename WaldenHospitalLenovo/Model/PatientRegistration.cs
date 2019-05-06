@@ -63,5 +63,8 @@ namespace WaldenHospitalLenovo.Model
         {
             return $"FullName : {FullName},Address :{Address} ,Gender :{Gender},Date Of Birth :{DateOfBirth}";
         }
+        
+
+
    }
 }
