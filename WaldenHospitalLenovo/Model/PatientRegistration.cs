@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WaldenHospitalLenovo.Event_Handler;
+using WaldenHospitalLenovo.EventHandler;
 
 namespace WaldenHospitalLenovo.Model
 {
-   public class PatientRegistration : NotifyPropertyChanged
-   {
-        #region Instance Field
+    public class PatientRegistration : NotifyPropertyChanged
+    {
+        #region Instance feilds
 
-        private string _fullname;
-       private string _address;
-       private bool _gender;
-       private DateTimeOffset _dateOfBirth;
+        private string _fullName;
+        private string _address;
+        private bool _gender;
+        private DateTimeOffset _dateOfBirth;
+
         #endregion
+
         #region Properties
- 
+
         public string FullName
         {
-            get { return _fullname;}
+            get { return _fullName; }
             set
             {
-                _fullname = value;
-              OnPropertyChanged(nameof(FullName)); 
+                _fullName = value;
+                OnPropertyChanged(nameof(FullName));
             }
         }
 
@@ -47,39 +49,24 @@ namespace WaldenHospitalLenovo.Model
                 OnPropertyChanged(nameof(Gender));
             }
         }
-
-        public DateTimeOffset DateOfBirth
-        {
-            get { return _dateOfBirth;}
-            set
-            {
-                value = _dateOfBirth;
-                OnPropertyChanged(nameof(DateOfBirth));
-            } }
+        public DateTimeOffset DateOfBirth { get; set; }
 
         #endregion
+
         #region Constructor
 
         public PatientRegistration()
         {
-            //Default Constructor
+            
         }
 
-        public PatientRegistration(string fullname, string address, bool gender, DateTimeOffset dateOfBirth)
-        {
-            _fullname = fullname;
-            _address = address;
-            _gender = gender;
-            _dateOfBirth = dateOfBirth;
-        }
         #endregion
+    }
+      
 
-        public override string ToString()
-        {
-            return $"FullName : {FullName},Address :{Address} ,Gender :{Gender},Date Of Birth :{DateOfBirth}";
-        }
+    }
 
 
-       
-   }
-}
+
+    
+

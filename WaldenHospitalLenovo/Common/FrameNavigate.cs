@@ -8,10 +8,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace WaldenHospitalLenovo.Common
 {
-   public static class  FrameNavigate
+     public class FrameNavigate
     {
-        // How to enable navigation between Pages A---->B in the ViewModel
-        public static void ActivateFrameNavigation(Type type)
+        public static void ActiveFrameNavigation(Type type)
         {
             var frame = (Frame) Window.Current.Content;
             frame.Navigate(type);
@@ -20,7 +19,3 @@ namespace WaldenHospitalLenovo.Common
         }
     }
 }
-
-
-
-
