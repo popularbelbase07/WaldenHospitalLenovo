@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WaldenHospitalLenovo.EventHandler;
+using WaldenHospitalLenovo.Event_Handler;
 
 namespace WaldenHospitalLenovo.Model
 {

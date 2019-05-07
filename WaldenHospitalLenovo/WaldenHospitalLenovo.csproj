@@ -125,7 +125,6 @@
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="ViewModel\HomePageVM.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
     <Compile Include="ViewModel\PatientRegistrationVm.cs" />
     <Compile Include="ViewPage\HomePage.xaml.cs">
