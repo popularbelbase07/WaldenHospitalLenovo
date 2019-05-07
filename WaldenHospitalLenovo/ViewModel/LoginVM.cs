@@ -7,7 +7,7 @@ using WaldenHospitalLenovo.Model;
 
 namespace WaldenHospitalLenovo.ViewModel
 {
-     public class LoginVm
+    public class LoginVm
     {
         public List<Login> ListLogin { get; set; }
         public Login CheckAuthentication { get; set; }
@@ -17,4 +17,5 @@ namespace WaldenHospitalLenovo.ViewModel
             CheckAuthentication = new Login();
             ListLogin = GetLoginFromDb();
         }
+    }
 }
