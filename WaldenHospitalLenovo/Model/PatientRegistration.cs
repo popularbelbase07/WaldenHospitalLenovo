@@ -48,14 +48,29 @@ namespace WaldenHospitalLenovo.Model
             }
         }
 
-        public DateTimeOffset DateOfBirth { get; set; }
+        public DateTimeOffset DateOfBirth
+        {
+            get { return _dateOfBirth;}
+            set
+            {
+                value = _dateOfBirth;
+                OnPropertyChanged(nameof(DateOfBirth));
+            } }
 
         #endregion
         #region Constructor
 
         public PatientRegistration()
         {
-            
+            //Default Constructor
+        }
+
+        public PatientRegistration(string fullname, string address, bool gender, DateTimeOffset dateOfBirth)
+        {
+            _fullname = fullname;
+            _address = address;
+            _gender = gender;
+            _dateOfBirth = dateOfBirth;
         }
         #endregion
 
@@ -63,8 +78,8 @@ namespace WaldenHospitalLenovo.Model
         {
             return $"FullName : {FullName},Address :{Address} ,Gender :{Gender},Date Of Birth :{DateOfBirth}";
         }
-        
 
 
+       
    }
 }

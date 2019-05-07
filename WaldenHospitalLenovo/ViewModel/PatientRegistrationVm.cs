@@ -19,6 +19,7 @@ namespace WaldenHospitalLenovo.ViewModel
         public PatientRegistrationVm()
         {
             AddPatient = new PatientRegistration();
+           
             listRegistration = CreateSaveMethod();
 
         }
