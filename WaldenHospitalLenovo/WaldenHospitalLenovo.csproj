@@ -120,12 +120,17 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\FrameNavigate.cs" />
+    <Compile Include="EventHandler\NotifyPropertyChanged.cs" />
     <Compile Include="Model\Login.cs" />
-    <Compile Include="ViewModel\LoginVM.cs" />
-    <Compile Include="ViewPage\HomePage.xaml.cs">
+    <Compile Include="ViewModel\BillingClerkPageVm.cs" />
+    <Compile Include="ViewModel\DoctorPageVm.cs" />
+    <Compile Include="ViewModel\HomePageVm.cs" />
+    <Compile Include="ViewModel\LoginPageVM.cs" />
+    <Compile Include="ViewModel\RegistrationPageVm.cs" />
+    <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPage\LoginPage.xaml.cs">
+    <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,11 +156,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ViewPage\HomePage.xaml">
+    <Page Include="View\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPage\LoginPage.xaml">
+    <Page Include="View\LoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
