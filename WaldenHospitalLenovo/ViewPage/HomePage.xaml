@@ -86,8 +86,8 @@
                           </CalendarDatePicker>
                   
              <Button Content="Doctor Name" Margin="160,90" FontSize="18"
-                          Foreground="White" BorderBrush="Transparent" Background="Transparent"/> 
-                  <TimePicker Margin="520,-120,-300,200"></TimePicker>
+                          Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+            <TimePicker Margin="520,-120,-300,200"></TimePicker>
         </StackPanel>      
       
     </Grid>
