@@ -69,7 +69,7 @@ namespace WaldenHospitalLenovo.ViewModel
             {
                 new Login("User1" , "Khem"),
                 new Login("User2" , "Popular"),
-                new Login("User3" , "Ganga"),
+                new Login("User3" , "Ganga")
 
             };
         }
