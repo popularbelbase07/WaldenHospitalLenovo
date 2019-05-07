@@ -122,6 +122,7 @@
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="EventHandler\NotifyPropertyChanged.cs" />
     <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="ViewModel\BillingClerkPageVm.cs" />
     <Compile Include="ViewModel\DoctorPageVm.cs" />
     <Compile Include="ViewModel\HomePageVm.cs" />
