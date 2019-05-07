@@ -17,5 +17,6 @@ namespace WaldenHospitalLenovo.ViewModel
             CheckAuthentication = new Login();
             ListLogin = GetLoginFromDb();
         }
+        public async  void LoginPage
     }
 }
