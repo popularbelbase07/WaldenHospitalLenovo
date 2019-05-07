@@ -14,22 +14,24 @@ namespace WaldenHospitalLenovo.ViewModel
     public class LoginVm
     {
         public List<Login> ListLogin { get; set; }
-        public Login CheckAuthentication { get; set; }
+       
+       
         public LoginVm()
         {
-            CheckAuthentication = new Login();
             ListLogin = GetLoginFromDb();
+          
 
         }
-        public async void LoginPage()
+        public async void LoginPage(string userName , string password)
         {
             foreach (var login in ListLogin)
             {
-
-                if ((login.UserName == CheckAuthentication.UserName ) && (login.Password == CheckAuthentication.Password))
+                if ((login.UserName == userName) && (login.Password == password))
                 {
+                    //page navigation
                     Type homeType = typeof(HomePage);
                     FrameNavigate.ActivateFrameNavigation(homeType);
+                    //Dialogue message:Pop-Up message
                     var success = new MessageDialog("Thank you for logging ");
                     await success.ShowAsync();
                     break;
@@ -45,14 +47,14 @@ namespace WaldenHospitalLenovo.ViewModel
             }
 
         }
-
+            // Catalogue
         public List<Login> GetLoginFromDb()
         {
             return new List<Login>()
             {
                 new Login("User1" , "Khem"),
                 new Login("User2" , "Popular"),
-                new Login("User3" , "Ganga"),
+                new Login("User3" , "Ganga")
 
             };
         }
