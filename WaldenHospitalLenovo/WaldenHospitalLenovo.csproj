@@ -127,11 +127,11 @@
     <Compile Include="ViewModel\LoginVm.cs" />
     <Compile Include="ViewModel\PatientRegistrationVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewPage\LoginPage1.xaml.cs">
-      <DependentUpon>LoginPage1Xaml</DependentUpon>
+    <Compile Include="ViewPage\LoginPageWald.xaml.cs">
+      <DependentUpon>LoginPageWald.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPage\MainPage1.xaml.cs">
-      <DependentUpon>MainPage1Xaml</DependentUpon>
+    <Compile Include="ViewPage\MainPageWald.xaml.cs">
+      <DependentUpon>MainPageWald.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -163,14 +163,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ViewPage\LoginPage1Xaml">
+    <Page Include="ViewPage\LoginPageWald.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="ViewPage\MainPage1Xaml">
+    </Page>
+    <Page Include="ViewPage\MainPageWald.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </None>
+    </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -22,21 +22,18 @@ namespace WaldenHospitalLenovo.ViewPage
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LoginPage1Xaml : Page
+    public sealed partial class LoginPageWald : Page
     {
-        public LoginPage1Xaml()
+        public LoginPageWald()
         {
             this.InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            
+            LoginVm vm = new LoginVm();
+            String userName = UserNa
         }
     }
 }
