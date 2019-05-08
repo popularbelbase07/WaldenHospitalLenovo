@@ -44,7 +44,7 @@ namespace WaldenHospitalLenovo.ViewModel
                 if ((login.UserName == userName) && (login.Password == password))
                 {
                     //page navigation
-                    Type homeType = typeof(HomePage);
+                    Type homeType = typeof(AppointmentPageWald);
                     FrameNavigate.ActivateFrameNavigation(homeType);
                     //Dialogue message:Pop-Up message
                     var success = new MessageDialog("Thank you for logging ");
