@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -13,7 +14,7 @@ namespace WaldenHospitalLenovo.ViewModel
 {
     public class LoginVm
     {
-        public List<Login> ListLogin { get; set; }
+        public ObservableCollection<Login> ListLogin { get; set; }
         //public Login Authentication { get; set; }
        
         public LoginVm()
@@ -63,9 +64,9 @@ namespace WaldenHospitalLenovo.ViewModel
 
         }
 // Catalogue
-        public List<Login> GetLoginFromDb()
+        public ObservableCollection<Login> GetLoginFromDb()
         {
-            return new List<Login>()
+            return new ObservableCollection<Login>()
             {
                 new Login("User1" , "Khem"),
                 new Login("User2" , "Popular"),
