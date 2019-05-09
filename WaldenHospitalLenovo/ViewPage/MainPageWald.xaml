@@ -36,7 +36,7 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Background="Violet">
             <Button Content="REG CLERK"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Width="300"
-                    Height="75" FontSize="25" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+                    Height="75" FontSize="25" Foreground="White" BorderBrush="Transparent" Background="Transparent" Click="Button_Click"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
 
             <Button Content="DOCTOR" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"

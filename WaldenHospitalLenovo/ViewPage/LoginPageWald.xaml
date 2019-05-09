@@ -24,18 +24,18 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Aqua" 
-                    BorderThickness="1.5" Padding="25,25,25,25">
+        <StackPanel x:Name="StackPanelLogin" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Aqua" 
+                    BorderThickness="1.5" Padding="25,25,25,25" Visibility="Visible">
             <TextBlock Text="USERNAME"
                        HorizontalAlignment="Left" Margin="0,20,0,0" TextLineBounds="Full"   FontSize="22"/>
-            <TextBox Height="45" Width="270" Margin="0,5,0,10"
+            <TextBox x:Name="UserName" Height="45" Width="270" Margin="0,5,0,10"
                      BorderBrush="Transparent" Background="SkyBlue"  FontSize="25" BorderThickness="1.5"/>
 
             <TextBlock Text="PASSWORD"
                        HorizontalAlignment="Left" Margin="0,20,0,0" FontSize="22"/>
 
-            <PasswordBox Margin="0,5,0,10" VerticalAlignment="Stretch" FontSize="25" Height="45" Width="270"
-                         Background="SkyBlue" BorderBrush="Transparent"  BorderThickness="1.5"/>
+            <PasswordBox x:Name="PasswordBox" Margin="0,5,0,10" VerticalAlignment="Stretch" FontSize="25" Height="45" Width="270"
+                         Background="SkyBlue" BorderBrush="Transparent"  BorderThickness="1.5" />
 
             <Button Content="LOG IN" Click="Button_Click"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,0" Width="270" Height="50"

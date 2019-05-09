@@ -125,8 +125,10 @@
     <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
-    <Compile Include="ViewModel\PatientRegistrationVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewPage\AppointmentPageWald.xaml.cs">
+      <DependentUpon>AppointmentPageWald.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewPage\LoginPageWald.xaml.cs">
       <DependentUpon>LoginPageWald.xaml</DependentUpon>
     </Compile>
@@ -163,6 +165,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ViewPage\AppointmentPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewPage\LoginPageWald.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
