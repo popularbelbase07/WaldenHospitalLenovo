@@ -11,6 +11,7 @@ namespace WaldenHospitalLenovo.Model
     public class PatientRegistration : NotifyPropertyChanged
     {
         #region Instance feilds
+       //............................
 
         private string _fullName;
         private string _address;
