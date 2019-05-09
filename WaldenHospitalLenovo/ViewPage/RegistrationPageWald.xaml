@@ -8,7 +8,30 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    
+        <Grid Background="Bisque">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBlock Text="Patient Registration page" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBold" Foreground="Teal"></TextBlock>
+            </StackPanel>
+            <StackPanel  >
+                <TextBlock HorizontalAlignment="Left" Margin="208,100,0,0" Text="Full Name" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+                <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+                <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Gender" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+                <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Date Of Birth" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+                <DatePicker HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400"/>
+                <Button Content="Save" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
+                    HorizontalAlignment="Left"  Margin="600,35,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
+                <Button Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
+                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
+            </StackPanel>
 
-    </Grid>
+
+        </Grid>
 </Page>

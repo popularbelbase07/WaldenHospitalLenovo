@@ -8,7 +8,50 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="CadetBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
+                                Margin="190,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
+                </CalendarDatePicker>
+           
+            </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <TimePicker Background="Transparent" BorderThickness="2" Foreground="White" >
+                
+                </TimePicker>
+            
+            </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="PATIENT NAME" FontSize="23" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150"/>
+            <SearchBox Height="25" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-400,-250,-400,0"/>
+            
+           
+        </StackPanel>
+       <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+           <TextBlock Text="DOCTORS NAME" FontSize="23" Width="190" />
+           <ComboBox Width="150"  BorderThickness="2" BorderBrush="Transparent">
+               
+           </ComboBox>
+       </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="BOOK APPOINTMENT" FontSize="25" Width="250" Background="Transparent" BorderThickness="2"/>
+            <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
+            <Button Content="NEW REGISTRATION" FontSize="25" Width="250" Background="Transparent" BorderThickness="2"/>
+        </StackPanel>
+
+        
 
     </Grid>
 </Page>
