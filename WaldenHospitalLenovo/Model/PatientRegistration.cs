@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WaldenHospitalLenovo.EventHandler;
+
 using WaldenHospitalLenovo.Event_Handler;
 
 namespace WaldenHospitalLenovo.Model
@@ -11,6 +11,7 @@ namespace WaldenHospitalLenovo.Model
     public class PatientRegistration : NotifyPropertyChanged
     {
         #region Instance feilds
+       //............................
 
         private string _fullName;
         private string _address;

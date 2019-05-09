@@ -121,18 +121,22 @@
     </Compile>
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
-    <Compile Include="Model\HomePageM.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
-    <Compile Include="ViewModel\PatientRegistrationVm.cs" />
-    <Compile Include="ViewPage\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewPage\RegistrationPage.xaml.cs">
-      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    <Compile Include="ViewPage\AppointmentPageWald.xaml.cs">
+      <DependentUpon>AppointmentPageWald.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\LoginPageWald.xaml.cs">
+      <DependentUpon>LoginPageWald.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\MainPageWald.xaml.cs">
+      <DependentUpon>MainPageWald.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\RegistrationPageWald.xaml.cs">
+      <DependentUpon>RegistrationPageWald.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -157,21 +161,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ViewPage\LoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewPage\RegistrationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.3</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Page Include="ViewPage\AppointmentPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPage\LoginPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPage\MainPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPage\RegistrationPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
