@@ -35,13 +35,14 @@ namespace WaldenHospitalLenovo
         {
           //  Frame.Navigate(typeof(HomePage));
 
-          LoginVm vm = new LoginVm();
-          string userName = UserName.Text;
-          string password = PasswordBox.Password;
+          //LoginVm vm = new LoginVm();
+          //string userName = UserName.Text;
+          //string password = PasswordBox.Password;
 
-          vm.LoginPage(userName , password);
-          DataContext = vm;
-
+          //vm.LoginPage(userName , password);
+          //DataContext = vm;
+          Frame.Navigate(typeof(AppointmentPage))
+              ;
         }
     }
 }

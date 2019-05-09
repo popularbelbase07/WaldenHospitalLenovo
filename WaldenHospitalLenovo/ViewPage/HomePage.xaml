@@ -35,7 +35,7 @@
             <TextBlock  Text="Menu"  FontWeight="ExtraBold"   VerticalAlignment="Center" HorizontalAlignment="Center" />
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
-            <Button Content="Book Appointment" HorizontalAlignment="Left"  Background="Green" FontSize="20" Width="200" VerticalAlignment="Center"  />
+            <Button Content="Book Appointment" HorizontalAlignment="Left"  Background="Green" FontSize="20" Width="200" VerticalAlignment="Center" Click="Button_Click_3"  />
             <Button Content="New Registration" Background="Green" FontSize="20" Width="200" Margin="20" Click="Button_Click_2" />
         </StackPanel>
 
