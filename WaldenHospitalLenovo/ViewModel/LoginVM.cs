@@ -8,7 +8,8 @@ using Windows.UI.Popups;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
 using WaldenHospitalLenovo.ViewPage;
-
+using Windows.UI.Xaml.Controls;
+ 
 namespace WaldenHospitalLenovo.ViewModel
 {
     public class LoginVm
