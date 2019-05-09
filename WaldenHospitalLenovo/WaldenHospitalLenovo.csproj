@@ -135,6 +135,9 @@
     <Compile Include="ViewPage\MainPageWald.xaml.cs">
       <DependentUpon>MainPageWald.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewPage\RegistrationPageWald.xaml.cs">
+      <DependentUpon>RegistrationPageWald.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -174,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewPage\MainPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPage\RegistrationPageWald.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
