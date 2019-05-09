@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WaldenHospitalLenovo.ViewModel
 {
-    class HomePageVM
+    class BillingClerkPageVm
     {
     }
 }

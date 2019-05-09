@@ -8,29 +8,43 @@ using Windows.UI.Popups;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
 using WaldenHospitalLenovo.ViewPage;
-using Windows.UI.Xaml.Controls;
- 
+
 namespace WaldenHospitalLenovo.ViewModel
 {
     public class LoginVm
     {
         public List<Login> ListLogin { get; set; }
-       
+        //public Login Authentication { get; set; }
        
         public LoginVm()
         {
             ListLogin = GetLoginFromDb();
-          
+            //Authentication=new Login();
 
         }
         public async void LoginPage(string userName , string password)
         {
             foreach (var login in ListLogin)
             {
+                //if ((login.UserName==Authentication.UserName) && (login.Password==Authentication.Password))
+                //{
+                //    Type homeType = typeof(HomePage);
+                //    FrameNavigate.ActivateFrameNavigation(homeType);
+                //    var success = new MessageDialog("Welcome to homepage");
+                //    await success.ShowAsync();
+                //    break;
+                //}
+                //else
+                //{
+                //    var failure = new MessageDialog("Given input is not matched !!");
+                //    await failure.ShowAsync();
+                //    break;
+                //}
+
                 if ((login.UserName == userName) && (login.Password == password))
                 {
                     //page navigation
-                    Type homeType = typeof(HomePage);
+                    Type homeType = typeof(AppointmentPageWald);
                     FrameNavigate.ActivateFrameNavigation(homeType);
                     //Dialogue message:Pop-Up message
                     var success = new MessageDialog("Thank you for logging ");
@@ -48,7 +62,7 @@ namespace WaldenHospitalLenovo.ViewModel
             }
 
         }
-            // Catalogue
+// Catalogue
         public List<Login> GetLoginFromDb()
         {
             return new List<Login>()
