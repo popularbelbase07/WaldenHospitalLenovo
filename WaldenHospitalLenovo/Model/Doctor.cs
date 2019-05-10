@@ -8,13 +8,21 @@ namespace WaldenHospitalLenovo.Model
 {
     public class Doctor
     {
+        #region Instance Field
         private int _id;
         private string _name;
         private string _specification;
+        #endregion
+
+        #region Properties
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Specification { get; set; }
+
+        #endregion
+
+        #region Constructor
 
         public Doctor(int id, string name, string specification)
         {
@@ -27,6 +35,9 @@ namespace WaldenHospitalLenovo.Model
         {
 
         }
+
+
+        #endregion
 
         public override string ToString()
         {

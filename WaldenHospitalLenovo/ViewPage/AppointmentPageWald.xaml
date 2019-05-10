@@ -41,14 +41,14 @@
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Doctor's Name" FontSize="23" Width="190" />
-            <ComboBox Width="150"  BorderThickness="2" BorderBrush="Transparent">
+            <ComboBox  x:Name="ComboBox1" ItemsSource="{x:Bind }" Width="150"  BorderThickness="2" BorderBrush="Transparent">
 
             </ComboBox>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="BOOK APPOINTMENT" FontSize="25" Width="250" Background="Transparent" BorderThickness="2"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
-            <Button Content="NEW REGISTRATION" FontSize="25" Width="250" Background="Transparent" BorderThickness="2"/>
+            <Button Content="NEW REGISTRATION" FontSize="25" Width="250" Background="Transparent" BorderThickness="2" Click="Button_Click"/>
         </StackPanel>
 
 

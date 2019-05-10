@@ -130,6 +130,7 @@
     <Compile Include="ViewModel\AppointmentVM.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\PatientRegistrationVm.cs" />
     <Compile Include="ViewPage\AppointmentPageWald.xaml.cs">
       <DependentUpon>AppointmentPageWald.xaml</DependentUpon>
     </Compile>
