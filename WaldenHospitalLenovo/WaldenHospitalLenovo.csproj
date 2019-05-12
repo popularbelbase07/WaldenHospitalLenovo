@@ -121,11 +121,15 @@
     </Compile>
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
+    <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModel\AppointmentVm.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\RegistrationVm.cs" />
     <Compile Include="ViewPage\AppointmentPageWald.xaml.cs">
       <DependentUpon>AppointmentPageWald.xaml</DependentUpon>
     </Compile>
@@ -134,6 +138,9 @@
     </Compile>
     <Compile Include="ViewPage\MainPageWald.xaml.cs">
       <DependentUpon>MainPageWald.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\PatientIdPageWald.xaml.cs">
+      <DependentUpon>PatientIdPageWald.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPage\RegistrationPageWald.xaml.cs">
       <DependentUpon>RegistrationPageWald.xaml</DependentUpon>
@@ -177,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewPage\MainPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPage\PatientIdPageWald.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
