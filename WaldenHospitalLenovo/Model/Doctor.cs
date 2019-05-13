@@ -41,7 +41,7 @@ namespace WaldenHospitalLenovo.Model
 
         public override string ToString()
         {
-            return $"Id:{Id} , Name:{Name} , Specification :{Specification}";
+            return $"{_name}-{_specification}";
         }
     }
 }
