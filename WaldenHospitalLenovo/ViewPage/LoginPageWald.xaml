@@ -13,15 +13,17 @@
         <myVM:LoginVm></myVM:LoginVm>
     </Page.DataContext>
         <Grid>
-
-        <Grid.Background>
+   <Grid Background="AliceBlue">
+            
+            <!--<Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                <GradientStop Color="AliceBlue" Offset="0.0"/>
+                --><!--<GradientStop Color="AliceBlue" Offset="0.0"/>
                 <GradientStop Color="AliceBlue" Offset="0.25"/>
                 <GradientStop Color="AliceBlue" Offset="0.75"/>
-                <GradientStop Color="AliceBlue" Offset="1.0"/>
+                <GradientStop Color="AliceBlue" Offset="1.0"/>--><!--
+                <GradientStop Color="Chartreuse"></GradientStop>
             </LinearGradientBrush>
-        </Grid.Background>
+        </Grid.Background>-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
@@ -47,4 +49,5 @@
         </StackPanel>
 
     </Grid>
+        </Grid>
 </Page>

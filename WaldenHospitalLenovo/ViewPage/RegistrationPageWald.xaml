@@ -11,7 +11,7 @@
     
         <Grid Background="Bisque">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <TextBlock Text="Patient Registration page" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBold" Foreground="Teal"></TextBlock>
+                <TextBlock Text="Patient Registration Form" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBold" Foreground="Teal"></TextBlock>
             </StackPanel>
             <StackPanel  >
                 <TextBlock HorizontalAlignment="Left" Margin="208,100,0,0" Text="Full Name" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
@@ -29,7 +29,7 @@
                 <Button Content="Save" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
                     HorizontalAlignment="Left"  Margin="600,35,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
                 <Button Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
-                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
+                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="Button_Click"/>
             </StackPanel>
 
 

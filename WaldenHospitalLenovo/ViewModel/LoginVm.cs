@@ -7,10 +7,13 @@ namespace WaldenHospitalLenovo.ViewModel
 {
     public class LoginVm
     {
-        public ObservableCollection<Login> ListLogin { get; set; }
-       
+        //Instance field
         private LoginCatalog lc;
-       
+        //Property
+        public ObservableCollection<Login> ListLogin { get; set; }
+        public RelayCommand LoginCommand { get; set; }
+
+        //Constructor
         public LoginVm()
         {
             ListLogin = new ObservableCollection<Login>();
@@ -19,16 +22,15 @@ namespace WaldenHospitalLenovo.ViewModel
             LoginCommand= new RelayCommand(ToLogin);
 
         }
-        public RelayCommand LoginCommand { get; set; }
+     
         private string _username;
+        private string _password;
 
         public string UserName
         {
             get { return _username; }
             set { _username = value; }
         }
-
-        private string _password;
 
         public string PassWord
         {

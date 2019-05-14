@@ -17,7 +17,7 @@ namespace WaldenHospitalLenovo.Model
         //Constructor
         public Login()
         {
-
+            //Default constructor
         }
 
         public Login(string userName, string password)

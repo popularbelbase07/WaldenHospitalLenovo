@@ -8,19 +8,20 @@ using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
 using WaldenHospitalLenovo.ViewPage;
 using Windows.UI.Popups;
+using WaldenHospitalLenovo.Event_Handler;
 
 namespace WaldenHospitalLenovo.Catalog
 {
-   public  class LoginCatalog
+   public  class LoginCatalog :NotifyPropertyChanged
    {
-
+        //Instance field
        private List<Login> _listLogin;
-
+        //Property
        public List<Login> ListLogin
        {
            get { return _listLogin; }
        }
-
+      //Constructor
        public LoginCatalog()
        {
            _listLogin = GetLoginFromDb().ToList();
@@ -43,7 +44,7 @@ namespace WaldenHospitalLenovo.Catalog
                 }
                 else
                 {
-                    var failure = new MessageDialog("User id or password is inCorrect !!");
+                    var failure = new MessageDialog("User id or password is incorrect !!");
                     await failure.ShowAsync();
                     break;
 
