@@ -5,10 +5,14 @@
     xmlns:local="using:WaldenHospitalLenovo.ViewPage"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:WaldenHospitalLenovo.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    
+    <Page.DataContext>
+        <viewModel:PatientRegistrationVm> </viewModel:PatientRegistrationVm>
+
+    </Page.DataContext>
         <Grid Background="Bisque">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <TextBlock Text="Patient Registration Form" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBold" Foreground="Teal"></TextBlock>
@@ -16,19 +20,23 @@
             <StackPanel  >
                 <TextBlock HorizontalAlignment="Left" Margin="208,100,0,0" Text="Full Name" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
                        FontSize ="30" Width="214"/>
-                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+                <TextBox Text="{Binding Name , Mode=TwoWay }"  HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400" />
                 <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
                        FontSize ="30" Width="214"/>
-                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
+                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="{Binding Address , Mode=TwoWay}" VerticalAlignment="Top" Height="61" Width="400" />
                 <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Gender" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
                        FontSize ="30" Width="214"/>
-                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="" VerticalAlignment="Top" Height="61" Width="400" />
-                <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Date Of Birth" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="{Binding Gender , Mode=TwoWay}" VerticalAlignment="Top" Height="61" Width="400" />
+            <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Phone Number" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
                        FontSize ="30" Width="214"/>
-                <DatePicker HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400"/>
-                <Button Content="Save" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
-                    HorizontalAlignment="Left"  Margin="600,35,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
-                <Button Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
+                <TextBox HorizontalAlignment="Left" Margin="700,-50,0,0" Text="{Binding PhoneNumber , Mode=TwoWay}" VerticalAlignment="Top" Height="61" Width="400" />
+
+<TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Date Of Birth" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                       FontSize ="30" Width="214"/>
+                <DatePicker Date="{Binding DateOfBirth , Mode=TwoWay}" HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400"/>
+            <Button Command="{Binding GoPatientIdCard}" Content="Save" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
+                    HorizontalAlignment="Left"  Margin="600,50,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
+                <Button  Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
                     HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="Button_Click"/>
             </StackPanel>
 

@@ -50,14 +50,14 @@ namespace WaldenHospitalLenovo.Catalog
             return patientRegistrationInstance.Address;
         }
 
-        public bool GetGender()
+        public string GetGender()
         {
             return patientRegistrationInstance.Gender;
         }
 
         public DateTime GetDateOfBirth()
         {
-            return patientRegistrationInstance.DateOfBirth.DateTime;
+            return patientRegistrationInstance.DateOfBirth;
         }
         //List for patient
         

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
+using WaldenHospitalLenovo.ViewPage;
 
 namespace WaldenHospitalLenovo.ViewModel
 {
@@ -14,6 +15,8 @@ namespace WaldenHospitalLenovo.ViewModel
        
     public ObservableCollection<Patient> SearchPatient { get; set; }
     public ObservableCollection<Doctor> SeeDoctor { get; set; }
+    public RelayCommand NewRegistration { get; set; }
+    public DateTime Calender { get; set; }
     
 
 
@@ -21,6 +24,8 @@ namespace WaldenHospitalLenovo.ViewModel
     {
         SearchPatient = PatientList();
         SeeDoctor = NameOfDoctor();
+        NewRegistration=new RelayCommand(NewRegistrationForm);
+       
     }
    //For Search Engine
     public ObservableCollection<Patient> PatientList()
@@ -54,6 +59,12 @@ namespace WaldenHospitalLenovo.ViewModel
             new Doctor(3,"Rosy","Gastrologist")
         };
     }
+
+        public static void NewRegistrationForm()
+        {
+            Type registrationType = typeof(RegistrationPageWald);
+           FrameNavigate.ActivateFrameworkNavigation(registrationType);
+        }
 
         
     }
