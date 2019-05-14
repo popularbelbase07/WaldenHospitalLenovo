@@ -119,7 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Catalog\LoginCatalog.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />

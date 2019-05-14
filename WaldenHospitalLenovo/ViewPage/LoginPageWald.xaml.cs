@@ -24,21 +24,13 @@ namespace WaldenHospitalLenovo.ViewPage
     /// </summary>
     public sealed partial class LoginPageWald : Page
     {
+        //LoginVm vm = new LoginVm();
         public LoginPageWald()
         {
             this.InitializeComponent();
+            //DataContext = vm;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string userName = UserName.Text;
-            string password = PasswordBox.Password;
-
-            LoginVm vm = new LoginVm();
-
-            vm.LoginPage(userName, password);
-            DataContext = vm;
-
-        }
+        
     }
 }
