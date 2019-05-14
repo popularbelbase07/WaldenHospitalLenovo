@@ -120,15 +120,19 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Catalog\LoginCatalog.cs" />
+    <Compile Include="Catalog\PatientRegistrationCatalog.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
+    <Compile Include="Common\NotifyPropertyChanged.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModel.xaml.cs">
+      <DependentUpon>ViewModel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AppointmentVM.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,6 +145,9 @@
     </Compile>
     <Compile Include="ViewPage\MainPageWald.xaml.cs">
       <DependentUpon>MainPageWald.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\PatientIdCard.xaml.cs">
+      <DependentUpon>PatientIdCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPage\RegistrationPageWald.xaml.cs">
       <DependentUpon>RegistrationPageWald.xaml</DependentUpon>
@@ -175,6 +182,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewPage\AppointmentPageWald.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -184,6 +195,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewPage\MainPageWald.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPage\PatientIdCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

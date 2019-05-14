@@ -62,6 +62,14 @@ namespace WaldenHospitalLenovo.Model
             
         }
 
+        public PatientRegistration(string fullName, string address, bool gender, DateTimeOffset dateOfBirth)
+        {
+            _fullName = fullName;
+            _address = address;
+            _gender = gender;
+            _dateOfBirth = dateOfBirth;
+        }
+
         #endregion
     }
       
