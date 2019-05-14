@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WaldenHospitalLenovo.Event_Handler;
+using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
 
 namespace WaldenHospitalLenovo.ViewModel
