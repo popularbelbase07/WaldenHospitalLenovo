@@ -8,7 +8,7 @@ using WaldenHospitalLenovo.Event_Handler;
 
 namespace WaldenHospitalLenovo.Model
 {
-    public class PatientRegistration : NotifyPropertyChanged
+    public class Patient2 : NotifyPropertyChanged
     {
         #region Instance feilds
        //............................
@@ -57,7 +57,7 @@ namespace WaldenHospitalLenovo.Model
 
         #region Constructor
 
-        public PatientRegistration()
+        public Patient2()
         {
             
         }

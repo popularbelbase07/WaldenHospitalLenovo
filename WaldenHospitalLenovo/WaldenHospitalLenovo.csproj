@@ -119,7 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Catalog\DoctorCatalog.cs" />
     <Compile Include="Catalog\LoginCatalog.cs" />
+    <Compile Include="Catalog\PatientCatalog.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
@@ -127,7 +129,7 @@
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Patient.cs" />
-    <Compile Include="Model\PatientRegistration.cs" />
+    <Compile Include="Model\Patient2.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\AppointmentVM.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />

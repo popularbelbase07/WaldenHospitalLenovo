@@ -10,7 +10,7 @@ namespace WaldenHospitalLenovo.ViewModel
 {
     public class PatientRegistrationVm
     {
-        public ObservableCollection<PatientRegistration> AddNewPatient { get; set; }
+        public ObservableCollection<Patient2> AddNewPatient { get; set; }
 
         public PatientRegistrationVm()
         {
@@ -18,11 +18,11 @@ namespace WaldenHospitalLenovo.ViewModel
 
         }
 
-        public ObservableCollection<PatientRegistration> NewPatients()
+        public ObservableCollection<Patient2> NewPatients()
         {
-            return new ObservableCollection<PatientRegistration>()
+            return new ObservableCollection<Patient2>()
             {
-                new PatientRegistration()
+                new Patient2()
 
             };
         }

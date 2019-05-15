@@ -20,6 +20,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
+            
+            
         </Grid.ColumnDefinitions>
 
         <Grid.DataContext>
@@ -28,9 +30,13 @@
 
         <StackPanel Grid.Row="0" Grid.Column="1">
             <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
-                                Margin="190,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
+                                Margin="0,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
             </CalendarDatePicker>
 
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock Text="Name" FontSize="23" Width="100"/>
+            <TextBox FontSize="28" Background="Transparent" BorderThickness="2"></TextBox>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
@@ -39,26 +45,28 @@
             </TimePicker>
 
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
-            <TextBlock Text="Patient's Name" FontSize="15" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+            <!--<SearchBox Height="25" Width="127" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.24,0.6"/>-->
+            <TextBlock Text="Patient's Name"  FontSize="23" Width="190" Margin="0,150,0,-75"  Foreground="White" />
             <!--<SearchBox Height="25" Width="127" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.24,0.6"/>-->
             <StackPanel>
-                <SearchBox x:Name="SearchPatient" QueryChanged="SrchPat_OnQueryChanged"></SearchBox>
-                <ListBox Background="CornflowerBlue" x:Name="SearchlistBox" FontSize="26" >
+                <SearchBox x:Name="SearchPatient" Margin="60,75,150,100" BorderThickness="2" BorderBrush="Transparent" QueryChanged="SrchPat_OnQueryChanged"/>
+                <ListBox  x:Name="SearchlistBox" FontSize="26" BorderBrush="Transparent" BorderThickness="2" >
                     <ListBox.ItemTemplate>
                         <DataTemplate x:DataType="gridexperiments:Patient">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock   Foreground="White"  Text="{x:Bind Name}" FontSize="24" />
+                                <TextBlock   Foreground="White"  Text="{x:Bind Path=Name}" FontSize="24" />
                             </StackPanel>
+                            
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
 
 
-</StackPanel>
+        </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Doctor's Name" FontSize="23" Width="190" />
+            <TextBlock Text="Doctor's Name" FontSize="23" Width="190" Foreground="White"  />
             <ComboBox  x:Name="ComboBox1" ItemsSource="{Binding SeeDoctor}" Width="150"  BorderThickness="2" BorderBrush="Transparent">
 
             </ComboBox>

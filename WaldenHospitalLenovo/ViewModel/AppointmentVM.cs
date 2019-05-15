@@ -52,6 +52,7 @@ namespace WaldenHospitalLenovo.ViewModel
             new Doctor(1,"Rajesh","Cardiologist"),
             new Doctor(2,"Randy","Psychologist"),
             new Doctor(3,"Rosy","Gastrologist")
+
         };
     }
 
