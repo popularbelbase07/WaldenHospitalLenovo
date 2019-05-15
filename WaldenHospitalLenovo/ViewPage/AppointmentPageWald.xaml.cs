@@ -24,22 +24,24 @@ namespace WaldenHospitalLenovo.ViewPage
         }
 
       
-        private void SrchPat_OnQueryChanged(SearchBox sender, SearchBoxQueryChangedEventArgs args)
-        {
+        //private void SrchPat_OnQueryChanged(SearchBox sender, SearchBoxQueryChangedEventArgs args)
+        //{
 
-            ObservableCollection<Patient> patientList = AppointmentVm.PatientList();
-            if (patientList != null)
-            {
-                SearchlistBox.ItemsSource =
-                    patientList.Where((a => a.Name.ToUpper().Contains(SearchPatient.QueryText.ToUpper())));
+        //    ObservableCollection<Patient2> patientList = AppointmentVm.PatientList();
+        //    if (patientList != null)
+        //    {
+        //        SearchlistBox.ItemsSource =
+        //            patientList.Where((a => a.Name.ToUpper().Contains(SearchPatient.QueryText.ToUpper())));
 
-            }
+        //    }
 
-        }
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+      
     }
 }

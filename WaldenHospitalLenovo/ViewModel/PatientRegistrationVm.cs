@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using WaldenHospitalLenovo.Catalog;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
@@ -24,32 +25,52 @@ namespace WaldenHospitalLenovo.ViewModel
 
         //    };
         //}
-        public int Id { get; set; }
+        private int _id;
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
         public string Name { get; set; }
         public string Address { get; set; }
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int PhoneNumber { get; set; }
-        private PatientRegistration newPatient;
+        public string PhoneNumber { get; set; }
 
-        public PatientRegistration NewPatient
+        private Patient newPatient;
+        public Patient NewPatient
         {
             get { return newPatient; }
             set { newPatient = value; }
         }
-        public PatientRegistrationCatalog PatientRegistration { get; set; }
-        public RelayCommand GoPatientIdCard { get; set; }
+
+        public PatientRegistrationCatalog pc;
+     public ObservableCollection<Patient> Listpatient { get; set; }
+        public RelayCommand CreatePatientCommand { get; set; }
 
         public PatientRegistrationVm()
         {
-        PatientRegistration= PatientRegistrationCatalog.Registration;
-        GoPatientIdCard=new RelayCommand(CreatePatientIdCard);
+            Listpatient=new ObservableCollection<Patient>();
+            CreatePatientCommand=new RelayCommand(CreatePatient);
+            pc=PatientRegistrationCatalog.Instance;
         }
 
-        public void CreatePatientIdCard()
+      //  public PatientRegistrationVm()
+      //  {
+      //PatientList=PatientRegistrationCatalog
+      //  CreatePatientCommand = new RelayCommand(CreatePatient);
+      //  }
+
+
+        public void CreatePatient()
         {
-            Type Idtype = typeof(PatientIdCard);
-            FrameNavigate.ActivateFrameworkNavigation(Idtype);
+            Patient p = new Patient(Id, Name, Address, Gender, DateOfBirth, PhoneNumber);
+
+            pc.AddPatient(p);
+            //Type Idtype = typeof(PatientIdCard);
+            //FrameNavigate.ActivateFrameworkNavigation(Idtype);
         }
     }
 }

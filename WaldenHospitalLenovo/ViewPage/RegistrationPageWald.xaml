@@ -34,7 +34,7 @@
 <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Date Of Birth" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
                        FontSize ="30" Width="214"/>
                 <DatePicker Date="{Binding DateOfBirth , Mode=TwoWay}" HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400"/>
-            <Button Command="{Binding GoPatientIdCard}" Content="Save" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
+            <Button Command="{Binding CreatePatientCommand}" Content="New Patient" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
                     HorizontalAlignment="Left"  Margin="600,50,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
                 <Button  Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
                     HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="Button_Click"/>
