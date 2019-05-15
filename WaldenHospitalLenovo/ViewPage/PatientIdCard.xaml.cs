@@ -20,21 +20,16 @@ namespace WaldenHospitalLenovo.ViewPage
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class RegistrationPageWald : Page
+    public sealed partial class PatientIdCard : Page
     {
-        public RegistrationPageWald()
+        public PatientIdCard()
         {
             this.InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(AppointmentPageWald));
+            Frame.Navigate(typeof(RegistrationPageWald));
         }
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Frame.Navigate(typeof(AppointmentPageWald));
-        //}
     }
 }
