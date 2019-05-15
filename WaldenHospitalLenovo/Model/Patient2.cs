@@ -3,38 +3,72 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WaldenHospitalLenovo.Common;
 
+using WaldenHospitalLenovo.Event_Handler;
 
 namespace WaldenHospitalLenovo.Model
 {
-    public class Patient2
+    public class Patient2 : NotifyPropertyChanged
     {
-       
+        #region Instance feilds
+       //............................
 
-        # region Properties
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Gender { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string PhoneNumber { get; set; }
+        private string _fullName;
+        private string _address;
+        private bool _gender;
+        private DateTimeOffset _dateOfBirth;
+
+        #endregion
+
+        #region Properties
+
+        public string FullName
+        {
+            get { return _fullName; }
+            set
+            {
+                _fullName = value;
+                OnPropertyChanged(nameof(FullName));
+            }
+        }
+
+        public string Address
+        {
+            get { return _address; }
+            set
+            {
+                _address = value;
+                OnPropertyChanged(nameof(Address));
+            }
+        }
+
+        public bool Gender
+        {
+            get { return _gender; }
+            set
+            {
+                _gender = value;
+                OnPropertyChanged(nameof(Gender));
+            }
+        }
+        public DateTimeOffset DateOfBirth { get; set; }
+
         #endregion
 
         #region Constructor
 
-        public Patient2(int id , string name)
+        public Patient2()
         {
-            Id = id;
-            Name = name;
+            
         }
+
         #endregion
-
-        public override string ToString()
-        {
-            return $"{Name} - {Id}";
-        }
-
-        
     }
-}
+      
+
+    }
+
+
+
+    
+

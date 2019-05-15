@@ -120,14 +120,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Catalog\LoginCatalog.cs" />
-    <Compile Include="Catalog\PatientRegistrationCatalog.cs" />
+    <Compile Include="Catalog\PatientCatalog.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Common\NotifyPropertyChanged.cs" />
+    <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
+    <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
-    <Compile Include="Model\Patient2.cs" />
     <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\Patient2.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\AppointmentVM.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
@@ -141,9 +142,6 @@
     </Compile>
     <Compile Include="ViewPage\MainPageWald.xaml.cs">
       <DependentUpon>MainPageWald.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewPage\PatientIdCard.xaml.cs">
-      <DependentUpon>PatientIdCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPage\RegistrationPageWald.xaml.cs">
       <DependentUpon>RegistrationPageWald.xaml</DependentUpon>
@@ -187,10 +185,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewPage\MainPageWald.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewPage\PatientIdCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
