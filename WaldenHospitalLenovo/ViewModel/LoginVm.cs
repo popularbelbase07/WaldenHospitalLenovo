@@ -2,6 +2,7 @@
 using WaldenHospitalLenovo.Catalog;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
+using WaldenHospitalLenovo.ViewModel;
 
 namespace WaldenHospitalLenovo.ViewModel
 {
