@@ -27,6 +27,7 @@
         </Grid.DataContext>
 
         <StackPanel Grid.Row="0" Grid.Column="1">
+            
             <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
                                 Margin="190,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
             </CalendarDatePicker>
@@ -59,7 +60,7 @@
 </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Doctor's Name" FontSize="23" Width="190" />
-            <ComboBox  x:Name="ComboBox1" ItemsSource="{Binding SeeDoctor}" Width="150"  BorderThickness="2" BorderBrush="Transparent">
+            <ComboBox  x:Name="ComboBox1" ItemsSource="{Binding OurDoctors}" Width="150"  BorderThickness="2" BorderBrush="Transparent">
 
             </ComboBox>
         </StackPanel>
