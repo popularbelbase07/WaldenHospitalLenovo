@@ -27,7 +27,6 @@ namespace WaldenHospitalLenovo.Model
             Password = password;
         }
 
-
         public override string ToString()
         {
             return $"{UserName}-{Password}";
