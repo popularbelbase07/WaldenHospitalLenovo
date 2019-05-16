@@ -27,9 +27,11 @@ namespace WaldenHospitalLenovo.ViewPage
             this.InitializeComponent();
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Frame.Navigate(typeof(AppointmentPageWald));
-        //}
+       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(AppointmentPageWald));
+        }
     }
 }

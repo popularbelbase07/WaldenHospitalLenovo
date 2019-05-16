@@ -6,12 +6,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:WaldenHospitalLenovo.ViewModel"
     xmlns:gridexperiments="using:WaldenHospitalLenovo.Model"
-       
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-   <!--<Page.DataContext>
-       <viewModel:AppointmentVm></viewModel:AppointmentVm>
-   </Page.DataContext>-->
+    
     <Grid Background="CadetBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -24,9 +24,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!--<Grid.DataContext>
+        <Grid.DataContext>
             <viewModel:AppointmentVm></viewModel:AppointmentVm>
-        </Grid.DataContext>-->
+        </Grid.DataContext>
 
         <StackPanel Grid.Row="0" Grid.Column="1">
             <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
@@ -41,24 +41,36 @@
             </TimePicker>
 
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
-            <TextBlock Text="Patient's Name" FontSize="15" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="140,150,70,10"/>
-            <SearchBox Height="25" Width="127" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.24,0.6"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch"  >
             <StackPanel>
-                <!--<SearchBox x:Name="SearchPatient" QueryChanged="SrchPat_OnQueryChanged"></SearchBox>
-                <ListBox Background="CornflowerBlue" x:Name="SearchlistBox" FontSize="26" >
-                    <ListBox.ItemTemplate>
-                        <DataTemplate x:DataType="gridexperiments:Patient">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock   Foreground="White"  Text="{x:Bind Name}" FontSize="24" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>-->
+                <TextBlock Text="Search Patients"></TextBlock>
+
+                <AutoSuggestBox HorizontalAlignment="Stretch" 
+                                Margin="0,0,0,0" VerticalAlignment="Center" 
+                                RenderTransformOrigin="-0.492,0.735"
+                                x:Name="SuggestBoxForPatient"
+                                QueryIcon="Find" ItemsSource="{Binding SearchPatient}"
+                                PlaceholderText="Search by Patients">
+                    <!--We used this code for alternative event handler method--> 
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="QuerySubmitted">
+                            <core:EventTriggerBehavior.Actions>
+                                <core:InvokeCommandAction Command="{Binding SuggessionSelectPatientQuerySubmitted}"/>
+                            </core:EventTriggerBehavior.Actions>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </AutoSuggestBox>
+                    <ListBox Background="CornflowerBlue"  FontSize="26" ItemsSource="{Binding SearchPatient , Mode=TwoWay}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Foreground="White" Text="{Binding Path=FullName}" FontSize="24" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
             </StackPanel>
-
-
-</StackPanel>
+        </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Doctor's Name" FontSize="23" Width="190" />
             <ComboBox  x:Name="ComboBox1" ItemsSource="{Binding SeeDoctor}" Width="150"  BorderThickness="2" BorderBrush="Transparent">
@@ -70,6 +82,7 @@
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
             <Button Command ="{Binding NewRegistration}"  Content="NEW REGISTRATION" FontSize="25" Width="300" Background="Transparent" BorderThickness="2" Click="Button_Click"/>
         </StackPanel>
+       
 
 
 

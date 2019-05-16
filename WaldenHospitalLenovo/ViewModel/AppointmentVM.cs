@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
+using Windows.UI.Xaml;
 using WaldenHospitalLenovo.Catalog;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
@@ -13,19 +15,25 @@ namespace WaldenHospitalLenovo.ViewModel
          public ObservableCollection<Doctor> SeeDoctor { get; set; }
          public RelayCommand NewRegistration { get; set; }
          public RelayCommand SearchCommand { get; set; }
+         public RelayCommand SuggessionSelectPatientQuerySubmitted { get; set; }
          public DateTime Calender { get; set; }
+         public string SearchListBox { get; set; }
+         public string Search { get; set; }
         
 
 
         public AppointmentVm()
         {
-             
+             SuggessionSelectPatientQuerySubmitted = new RelayCommand(GoSearching);    
              NewRegistration = new RelayCommand(NewRegistrationForm);
              SearchCommand = new RelayCommand(SearchPatientNew);
              prc = PatientRegistrationCatalog.Instance;
-            _found = new Patient();
+             Patient = new Patient();
+             SearchPatient = prc.Patients;
 
         }
+
+        public Patient Patient { get; set; }
 
         private string _name;
         public string FullName
@@ -62,31 +70,14 @@ namespace WaldenHospitalLenovo.ViewModel
 
         }
 
-
-
-        //public string Name
-        //{
-        //       get { return }
-        //       //set { }
-        //}
-
-        //public string Gender
-        //{
-        //       get { }
-        //       //set { }
-
-        //}
-
-        private string _key;
-        public string SearchKey
-        {
-            get { return _key; }
-            set { _key = value; }
-        }
-
         public void NewRegistrationForm()
         {
 
+        }
+
+        public void GoSearching()
+        {
+            SearchPatient?.Where(a => a.FullName.ToUpper().Contains(Patient.FullName.ToUpper()));
         }
 
 

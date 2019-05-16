@@ -17,6 +17,8 @@ namespace WaldenHospitalLenovo.Catalog
             _patients = new ObservableCollection<Patient>
             {
                 new Patient(1, "John", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
+                new Patient(1, "Jedy", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
+                new Patient(1, "Jimmy", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
                 new Patient(1, "ganga", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
                 new Patient(1, "poular", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
                 new Patient(1, "khem", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),

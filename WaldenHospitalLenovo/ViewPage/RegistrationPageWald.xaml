@@ -36,8 +36,8 @@
                 <DatePicker Date="{Binding NewPatient.DateOfBirth , Mode=TwoWay}" HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400"/>
             <Button Command="{Binding NewRegistration}" Content="New Registration" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
                     HorizontalAlignment="Left"  Margin="600,50,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
-                <Button Command="{Binding GoBackCommand}" Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
-                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200" />
+                <Button  Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
+                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="Button_Click" />
             </StackPanel>
 
 
