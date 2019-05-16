@@ -27,8 +27,11 @@
         <Grid.DataContext>
             <viewModel:AppointmentVm></viewModel:AppointmentVm>
         </Grid.DataContext>
+      
+            <Button Command="{Binding Logout}" Content="LOG OUT" Margin="0,50,100,10" HorizontalAlignment="Right" Background="Chocolate" BorderBrush="Transparent"
+                    Foreground="AliceBlue" FontSize="25" Width="140" VerticalAlignment="Top" Grid.Column="2" />
 
-        <StackPanel Grid.Row="0" Grid.Column="1">
+            <StackPanel Grid.Row="0" Grid.Column="1">
             <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
                                 Margin="190,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
             </CalendarDatePicker>
@@ -80,7 +83,7 @@
         <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="BOOK APPOINTMENT" FontSize="25" Width="300" Background="Transparent" BorderThickness="2"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
-            <Button Command ="{Binding NewRegistration}"  Content="NEW REGISTRATION" FontSize="25" Width="300" Background="Transparent" BorderThickness="2" Click="Button_Click"/>
+            <Button Command ="{Binding NewRegistration}"  Content="NEW REGISTRATION" FontSize="25" Width="300" Background="Transparent" BorderThickness="2" Click="Button_Click" />
         </StackPanel>
        
 

@@ -40,7 +40,7 @@
             <TextBlock Text="PASSWORD"
                        HorizontalAlignment="Left" Margin="0,20,0,0" FontSize="22"/>
 
-            <TextBox Text="{Binding PassWord , Mode=TwoWay}"  x:Name="PasswordBox" Margin="0,5,0,10" VerticalAlignment="Stretch" FontSize="25" Height="45" Width="270"
+            <PasswordBox Password="{Binding PassWord , Mode=TwoWay}"  x:Name="PasswordBox" Margin="0,5,0,10" VerticalAlignment="Stretch" FontSize="25" Height="45" Width="270"
                          Background="SkyBlue" BorderBrush="Transparent"  BorderThickness="1.5" />
 
             <Button  Command="{Binding LoginCommand}" Content="LOG IN" 

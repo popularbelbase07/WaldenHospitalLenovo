@@ -39,7 +39,7 @@ namespace WaldenHospitalLenovo.ViewPage
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(RegistrationPageWald));
+
         }
     }
 }
