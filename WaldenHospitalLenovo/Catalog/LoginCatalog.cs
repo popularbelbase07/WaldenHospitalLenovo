@@ -15,16 +15,16 @@ namespace WaldenHospitalLenovo.Catalog
    public  class LoginCatalog :NotifyPropertyChanged
    {
         //Instance field
-       private List<Login> _listLogin;
+       private ObservableCollection<Login> _listLogin;
         //Property
-       public List<Login> ListLogin
+       public ObservableCollection<Login> ListLogin
        {
            get { return _listLogin; }
        }
       //Constructor
        public LoginCatalog()
        {
-           _listLogin = GetLoginFromDb().ToList();
+           _listLogin = GetLoginFromDb();
 
        }
        public async void CheckLogin(string userName, string password)

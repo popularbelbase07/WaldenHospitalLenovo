@@ -9,22 +9,7 @@ namespace WaldenHospitalLenovo.ViewModel
 {
     public class PatientRegistrationVm
     {
-        //public ObservableCollection<PatientRegistration> AddNewPatient { get; set; }
-
-        //public PatientRegistrationVm()
-        //{
-        //    AddNewPatient = NewPatients();
-
-        //}
-
-        //public ObservableCollection<PatientRegistration> NewPatients()
-        //{
-        //    return new ObservableCollection<PatientRegistration>()
-        //    {
-        //        new PatientRegistration()
-
-        //    };
-        //}
+       
         private int _id;
 
         public int Id
@@ -47,7 +32,7 @@ namespace WaldenHospitalLenovo.ViewModel
         }
 
         public PatientRegistrationCatalog pc;
-     public ObservableCollection<Patient> Listpatient { get; set; }
+        public ObservableCollection<Patient> Listpatient { get; set; }
         public RelayCommand CreatePatientCommand { get; set; }
 
         public PatientRegistrationVm()
