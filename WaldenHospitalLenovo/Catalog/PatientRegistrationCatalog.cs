@@ -26,6 +26,7 @@ namespace WaldenHospitalLenovo.Catalog
             };
 
         }
+        //Using singleton
         private static PatientRegistrationCatalog _instance;
 
         public static PatientRegistrationCatalog Instance => _instance ?? (_instance = new PatientRegistrationCatalog());

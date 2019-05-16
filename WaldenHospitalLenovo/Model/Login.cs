@@ -8,7 +8,8 @@ namespace WaldenHospitalLenovo.Model
 {
    public class Login
     {
-        
+        //commit
+
         //Properties
         public string UserName { get; set; }
 
