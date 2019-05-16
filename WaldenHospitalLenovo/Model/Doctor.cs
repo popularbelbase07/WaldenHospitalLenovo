@@ -33,10 +33,8 @@ namespace WaldenHospitalLenovo.Model
 
         public Doctor()
         {
-
+            
         }
-
-
         #endregion
 
         public override string ToString()

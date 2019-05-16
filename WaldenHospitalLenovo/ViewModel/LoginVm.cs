@@ -20,7 +20,7 @@ namespace WaldenHospitalLenovo.ViewModel
             ListLogin = new ObservableCollection<Login>();
             lc= new LoginCatalog();
            
-            LoginCommand= new RelayCommand(ToLogin);
+            LoginCommand= new RelayCommand(toLogin);
 
         }
      
@@ -39,7 +39,7 @@ namespace WaldenHospitalLenovo.ViewModel
             set { _password = value; }
         }
 
-        public void ToLogin( )
+        public void toLogin( )
         {
           
             lc.CheckLogin(_username,_password);

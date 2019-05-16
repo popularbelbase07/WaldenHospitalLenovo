@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WaldenHospitalLenovo.Model
 {
-    public class Login
+   public class Login
     {
-
+        
         //Properties
         public string UserName { get; set; }
 

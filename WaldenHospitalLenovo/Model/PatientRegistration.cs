@@ -5,19 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using WaldenHospitalLenovo.Common;
 
-
 namespace WaldenHospitalLenovo.Model
 {
-    public class Patient : NotifyPropertyChanged
+    public class PatientRegistration : NotifyPropertyChanged
     {
         #region Instance feilds
-        //............................
-        private int _id;
+       //............................
+
         private string _fullName;
         private string _address;
         private string _gender;
-        private DateTime _dateOfBirth;
-        private string _phoneNumber;
+        private DateTimeOffset _dateOfBirth;
+        private int _phoneNumber;
 
         #endregion
 
@@ -43,18 +42,16 @@ namespace WaldenHospitalLenovo.Model
             }
         }
 
-        public string Gender
-        {
+        public string Gender {
             get { return _gender; }
             set
             {
                 _gender = value;
                 OnPropertyChanged(nameof(Gender));
-            }
-        }
+            } }
         public DateTime DateOfBirth { get; set; }
 
-        public string PhoneNumber
+        public int PhoneNumber
         {
             get { return _phoneNumber; }
             set
@@ -63,37 +60,18 @@ namespace WaldenHospitalLenovo.Model
                 OnPropertyChanged(nameof(PhoneNumber));
             }
         }
-        public int ID
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                OnPropertyChanged(nameof(ID));
-            }
-        }
 
         #endregion
 
         #region Constructor
 
-        public Patient()
+        public PatientRegistration()
         {
-
+            
         }
 
-        public Patient(string fullName, string address, string gender, DateTime dateOfBirth, string phoneNumber)
+        public PatientRegistration(string fullName, string address, string gender, DateTimeOffset dateOfBirth, int phoneNumber)
         {
-
-            _fullName = fullName;
-            _address = address;
-            _gender = gender;
-            _dateOfBirth = dateOfBirth;
-            _phoneNumber = phoneNumber;
-        }
-        public Patient(int id, string fullName, string address, string gender, DateTime dateOfBirth, string phoneNumber)
-        {
-            _id = id;
             _fullName = fullName;
             _address = address;
             _gender = gender;
@@ -102,5 +80,11 @@ namespace WaldenHospitalLenovo.Model
         }
         #endregion
     }
+      
 
-}
+    }
+
+
+
+    
+

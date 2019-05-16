@@ -9,67 +9,48 @@
        
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Page.DataContext>
-        <viewModel:AppointmentVm></viewModel:AppointmentVm>
-    </Page.DataContext>
+   <!--<Page.DataContext>
+       <viewModel:AppointmentVm></viewModel:AppointmentVm>
+   </Page.DataContext>-->
     <Grid Background="CadetBlue">
         <Grid.RowDefinitions>
-            <RowDefinition Height="521*"/>
-            <RowDefinition Height="479*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="401*"/>
-            <ColumnDefinition Width="1039*"/>
-            <ColumnDefinition Width="480*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <!--<Grid.DataContext>
             <viewModel:AppointmentVm></viewModel:AppointmentVm>
         </Grid.DataContext>-->
 
-        <StackPanel Grid.Row="0" Margin="9.667,0,207.333,5.333" Grid.Column="1">
-            <CalendarDatePicker Grid.Column="2" PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Left"
-                                Margin="570,0,0,0" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent" Height="153" VerticalAlignment="Center" Width="406">
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
+                                Margin="190,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
             </CalendarDatePicker>
-            <StackPanel   Margin="72,0,-39.667,0" Height="157">
-                <StackPanel    Orientation="Horizontal" Height="83" Margin="0,0,-17.667,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <TextBlock Text="Name" TextWrapping="Wrap" Height="18" Margin="46,0,282.333,0" />
-                    <TextBox Text="{Binding Path= Found.FullName}" Height="58" Margin="-211.333,0,3.333,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                </StackPanel>
-
-                <StackPanel Background="red" Orientation="Horizontal" Margin="0,0,199.333,0" Height="47">
-                    <TextBlock Text="gender" TextWrapping="Wrap" Height="18" Margin="46,0,282.333,0" />
-                    <TextBox  Text="{Binding  Path= Found.Gender}" Height="57" Margin="-229,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                </StackPanel>
-            </StackPanel>
-
-
 
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Margin="0,0,0,0" Width="242">
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <TimePicker Background="Transparent" BorderThickness="2" Foreground="White" >
 
             </TimePicker>
 
         </StackPanel>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,8.333,0,0" VerticalAlignment="Stretch" Width="200">
-            <TextBlock Text="Patient's Name" FontSize="15" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
-            <!--<SearchBox Height="25" Width="127" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.24,0.6"/>-->
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+            <TextBlock Text="Patient's Name" FontSize="15" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="140,150,70,10"/>
+            <SearchBox Height="25" Width="127" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.24,0.6"/>
             <StackPanel>
-                <TextBox Text="{Binding SearchKey , Mode=TwoWay}" x:Name="SearchPatient" Height="54" Width="191" />
-                <Button Command="{Binding SearchCommand}" HorizontalAlignment="Center" Height="52"  Margin="120,0,0,0"   VerticalAlignment="Center" Width="80">Search</Button>
-                <StackPanel Grid.Row="0" Grid.Column="1" 
-                           >
-                    <StackPanel HorizontalAlignment="Stretch" Height="100" VerticalAlignment="Stretch" Width="100"/>
-
-                </StackPanel>
-                <!--<ListBox Background="CornflowerBlue" x:Name="SearchlistBox" FontSize="26" >
+                <!--<SearchBox x:Name="SearchPatient" QueryChanged="SrchPat_OnQueryChanged"></SearchBox>
+                <ListBox Background="CornflowerBlue" x:Name="SearchlistBox" FontSize="26" >
                     <ListBox.ItemTemplate>
                         <DataTemplate x:DataType="gridexperiments:Patient">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock   Foreground="White"  Text="{x:Bind FullName}" FontSize="24" />
+                                <TextBlock   Foreground="White"  Text="{x:Bind Name}" FontSize="24" />
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -77,19 +58,18 @@
             </StackPanel>
 
 
-        </StackPanel>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="63" Margin="0,0,0,0" Width="190">
+</StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Doctor's Name" FontSize="23" Width="190" />
             <ComboBox  x:Name="ComboBox1" ItemsSource="{Binding SeeDoctor}" Width="150"  BorderThickness="2" BorderBrush="Transparent">
 
             </ComboBox>
         </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="93" Margin="0,0,0,0" Width="375">
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="BOOK APPOINTMENT" FontSize="25" Width="300" Background="Transparent" BorderThickness="2"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
             <Button Command ="{Binding NewRegistration}"  Content="NEW REGISTRATION" FontSize="25" Width="300" Background="Transparent" BorderThickness="2" Click="Button_Click"/>
         </StackPanel>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="195" Margin="414.333,8.333,0,0" Grid.Row="1" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="0"/>
 
 
 

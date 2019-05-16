@@ -126,8 +126,8 @@
     <Compile Include="Common\NotifyPropertyChanged.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
-    <Compile Include="Model\Patient2.cs" />
     <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\AppointmentVM.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
