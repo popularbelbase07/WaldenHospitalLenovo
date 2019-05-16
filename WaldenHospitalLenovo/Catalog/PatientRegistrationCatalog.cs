@@ -14,31 +14,26 @@ namespace WaldenHospitalLenovo.Catalog
         private PatientRegistrationCatalog()
         {
             //_patients = PatientList();
-            _patients = new ObservableCollection<Patient>();
-            _patients.Add(new Patient(1, "John", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"));
+            _patients = new ObservableCollection<Patient>
+            {
+                new Patient(1, "John", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
+                new Patient(1, "ganga", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
+                new Patient(1, "poular", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
+                new Patient(1, "khem", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
+                new Patient(1, "zuhair", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626")
+            };
+
         }
         private static PatientRegistrationCatalog _instance;
 
-        public static PatientRegistrationCatalog Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new PatientRegistrationCatalog();
-                    return _instance;
-                }
-
-                return _instance;
-            }
-        }
+        public static PatientRegistrationCatalog Instance => _instance ?? (_instance = new PatientRegistrationCatalog());
 
         private ObservableCollection<Patient> _patients;
 
         public ObservableCollection<Patient> Patients
         {
-            get { return _patients; }
-            set { _patients = value; }
+            get => _patients;
+            set => _patients = value;
         }
 
     }

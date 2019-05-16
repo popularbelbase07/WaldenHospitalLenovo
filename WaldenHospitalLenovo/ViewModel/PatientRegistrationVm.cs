@@ -14,27 +14,42 @@ namespace WaldenHospitalLenovo.ViewModel
         public string Address { get; set; }
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int PhoneNumber { get; set; }
-        private PatientRegistration newPatient;
+        public string PhoneNumber { get; set; }
 
-        public PatientRegistration NewPatient
-        {
-            get { return newPatient; }
-            set { newPatient = value; }
-        }
-        public PatientRegistrationCatalog PatientRegistration { get; set; }
-        //public RelayCommand GoPatientIdCard { get; set; }
+        public PatientRegistration NewPatient { get; set; }
+
+        public PatientRegistrationCatalog Prc { get; set; }
+        public RelayCommand NewRegistration { get; set; }
+        public RelayCommand GoBackCommand { get; set; }
 
         public PatientRegistrationVm()
         {
-      //  PatientRegistration= PatientRegistrationCatalog.Registration;
-       // GoPatientIdCard=new RelayCommand(CreatePatientIdCard);
+            NewPatient = new PatientRegistration();
+            Prc = PatientRegistrationCatalog.Instance;
+            NewRegistration =new RelayCommand(CreatePatientIdCard);
+            GoBackCommand = new RelayCommand(GoBack);
         }
 
         public void CreatePatientIdCard()
         {
-            Type Idtype = typeof(PatientIdCard);
-          //  FrameNavigate.ActivateFrameworkNavigation(Idtype);
+            try
+            {
+                Prc.Patients?.Add(new Patient(NewPatient.FullName, NewPatient.Address, NewPatient.Gender, NewPatient.DateOfBirth, NewPatient.PhoneNumber.ToString()));
+                Type type = typeof(PatientIdCard);
+                FrameNavigate.ActivateFrameworkNavigation(type);
+
+            }
+            catch (Exception e)
+            {
+                throw  new Exception();
+            }
+
+        }
+
+        public void GoBack()
+        {
+            Type type = typeof(PatientIdCard);
+            FrameNavigate.ActivateFrameworkNavigation(type);
         }
     }
 }

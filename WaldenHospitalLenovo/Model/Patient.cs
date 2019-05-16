@@ -25,7 +25,7 @@ namespace WaldenHospitalLenovo.Model
 
         public string FullName
         {
-            get { return _fullName; }
+            get => _fullName;
             set
             {
                 _fullName = value;
@@ -35,7 +35,7 @@ namespace WaldenHospitalLenovo.Model
 
         public string Address
         {
-            get { return _address; }
+            get => _address;
             set
             {
                 _address = value;
@@ -45,7 +45,7 @@ namespace WaldenHospitalLenovo.Model
 
         public string Gender
         {
-            get { return _gender; }
+            get => _gender;
             set
             {
                 _gender = value;
@@ -56,7 +56,7 @@ namespace WaldenHospitalLenovo.Model
 
         public string PhoneNumber
         {
-            get { return _phoneNumber; }
+            get => _phoneNumber;
             set
             {
                 _phoneNumber = value;
@@ -65,7 +65,7 @@ namespace WaldenHospitalLenovo.Model
         }
         public int ID
         {
-            get { return _id; }
+            get => _id;
             set
             {
                 _id = value;
