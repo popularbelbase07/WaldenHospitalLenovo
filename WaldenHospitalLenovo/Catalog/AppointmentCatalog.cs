@@ -40,7 +40,7 @@ namespace WaldenHospitalLenovo.Catalog
          myAppointments=new ObservableCollection<Appointment>()
          {
              //new Appointment(1,2,(DateTime.Now,DateTime.Now.Hour ,new DateTime(2019/05/22)))
-           
+           //aa
          };
        }
 
