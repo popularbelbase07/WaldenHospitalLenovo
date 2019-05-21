@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WaldenHospitalLenovo.Annotations;
 
-namespace WaldenHospitalLenovo.Event_Handler
+namespace WaldenHospitalLenovo.Common
 {
     public class NotifyPropertyChanged :INotifyPropertyChanged
     {

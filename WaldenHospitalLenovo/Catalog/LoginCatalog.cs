@@ -1,37 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.UI.Popups;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
 using WaldenHospitalLenovo.ViewPage;
-using Windows.UI.Xaml.Controls;
- 
-namespace WaldenHospitalLenovo.ViewModel
-{
-    public class LoginVm
-    {
-        public List<Login> ListLogin { get; set; }
-       
-       
-        public LoginVm()
-        {
-            ListLogin = GetLoginFromDb();
-          
+using Windows.UI.Popups;
+using WaldenHospitalLenovo.Common;
 
-        }
-        public async void LoginPage(string userName , string password)
+namespace WaldenHospitalLenovo.Catalog
+{
+   public  class LoginCatalog :NotifyPropertyChanged
+   {
+        //Instance field
+       private ObservableCollection<Login> _listLogin;
+        //Property
+       public ObservableCollection<Login> ListLogin
+       {
+           get { return _listLogin; }
+       }
+      //Constructor
+       public LoginCatalog()
+       {
+           _listLogin = GetLoginFromDb();
+
+       }
+       public async void CheckLogin(string userName, string password)
         {
             foreach (var login in ListLogin)
             {
+             
                 if ((login.UserName == userName) && (login.Password == password))
                 {
                     //page navigation
-                    Type homeType = typeof(HomePage);
-                    FrameNavigate.ActivateFrameNavigation(homeType);
+                    Type loginType = typeof(AppointmentPageWald);
+                    FrameNavigate.ActivateFrameworkNavigation(loginType);
                     //Dialogue message:Pop-Up message
                     var success = new MessageDialog("Thank you for logging ");
                     await success.ShowAsync();
@@ -39,7 +44,7 @@ namespace WaldenHospitalLenovo.ViewModel
                 }
                 else
                 {
-                    var failure = new MessageDialog("User id or password is inCorrect !!");
+                    var failure = new MessageDialog("User id or password is incorrect !!");
                     await failure.ShowAsync();
                     break;
 
@@ -48,10 +53,10 @@ namespace WaldenHospitalLenovo.ViewModel
             }
 
         }
-            // Catalogue
-        public List<Login> GetLoginFromDb()
+        // Fake database for login 
+        public ObservableCollection<Login> GetLoginFromDb()
         {
-            return new List<Login>()
+            return new ObservableCollection<Login>()
             {
                 new Login("User1" , "Khem"),
                 new Login("User2" , "Popular"),
@@ -59,6 +64,5 @@ namespace WaldenHospitalLenovo.ViewModel
 
             };
         }
-
     }
 }

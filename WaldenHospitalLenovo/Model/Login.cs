@@ -8,7 +8,8 @@ namespace WaldenHospitalLenovo.Model
 {
    public class Login
     {
-        
+        //commit
+
         //Properties
         public string UserName { get; set; }
 
@@ -17,7 +18,7 @@ namespace WaldenHospitalLenovo.Model
         //Constructor
         public Login()
         {
-
+            //Default constructor
         }
 
         public Login(string userName, string password)
@@ -25,6 +26,7 @@ namespace WaldenHospitalLenovo.Model
             UserName = userName;
             Password = password;
         }
+
 
         public override string ToString()
         {

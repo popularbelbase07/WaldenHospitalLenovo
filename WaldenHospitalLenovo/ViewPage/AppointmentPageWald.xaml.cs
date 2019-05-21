@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using WaldenHospitalLenovo.Model;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using WaldenHospitalLenovo.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +14,37 @@ namespace WaldenHospitalLenovo.ViewPage
     /// </summary>
     public sealed partial class AppointmentPageWald : Page
     {
+        public AppointmentVm AppointmentVm { get; set; } = new AppointmentVm();
+        //public Patient PatientName { get; set; } = new Patient();
         public AppointmentPageWald()
         {
             this.InitializeComponent();
+
+            //SearchlistBox.ItemsSource = AppointmentVm.SearchPatient;
+        }
+
+      
+        private void SrchPat_OnQueryChanged(SearchBox sender, SearchBoxQueryChangedEventArgs args)
+        {
+
+            //ObservableCollection<Patient> patientList = AppointmentVm.PatientList();
+            //if (patientList != null)
+            //{
+            //    SearchlistBox.ItemsSource =
+            //        patientList.Where((a => a.Name.ToUpper().Contains(SearchPatient.QueryText.ToUpper())));
+
+            //}
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TimePicker_OnSelectedTimeChanged(TimePicker sender, TimePickerSelectedValueChangedEventArgs args)
+        {
+            AppointmentVm.From = myPicker.Time;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

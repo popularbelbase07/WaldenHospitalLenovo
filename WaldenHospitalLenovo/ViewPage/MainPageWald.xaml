@@ -27,10 +27,10 @@
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" Background="DeepSkyBlue">
-            <Button Content="LOG OUT" Margin="50,50,10,10" HorizontalAlignment="Right" Background="BlueViolet" BorderBrush="Transparent"
-                    Foreground="AliceBlue" FontSize="25" Width="140" VerticalAlignment="Center"/>
+            <!--<Button Content="LOG OUT" Margin="50,50,10,10" HorizontalAlignment="Right" Background="BlueViolet" BorderBrush="Transparent"
+                    Foreground="AliceBlue" FontSize="25" Width="140" VerticalAlignment="Center" Click="Button_Click_1"/>-->
             <TextBlock Text="WALDEN HOSPITAL" FontWeight="ExtraBold" FontSize="30" Width="300" VerticalAlignment="Center"
-                       Margin="0,-50,50,50" Foreground="Cyan"/>
+                       Margin="50,50,50,50" Foreground="Cyan"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Background="Violet">

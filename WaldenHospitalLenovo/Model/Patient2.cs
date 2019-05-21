@@ -3,33 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WaldenHospitalLenovo.Common;
+
+using WaldenHospitalLenovo.Event_Handler;
 
 namespace WaldenHospitalLenovo.Model
 {
-    public class PatientRegistration : NotifyPropertyChanged
+    public class Patient2 : NotifyPropertyChanged
     {
         #region Instance feilds
        //............................
-       private int _id;
+
         private string _fullName;
         private string _address;
-        private string _gender;
+        private bool _gender;
         private DateTimeOffset _dateOfBirth;
-        private string _phoneNumber;
 
         #endregion
 
         #region Properties
-        public int ID
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                OnPropertyChanged(nameof(ID));
-            }
-        }
 
         public string FullName
         {
@@ -51,43 +42,26 @@ namespace WaldenHospitalLenovo.Model
             }
         }
 
-        public string Gender {
+        public bool Gender
+        {
             get { return _gender; }
             set
             {
                 _gender = value;
                 OnPropertyChanged(nameof(Gender));
-            } }
-        public DateTime DateOfBirth { get; set; }
-
-        public string PhoneNumber
-        {
-            get { return _phoneNumber; }
-            set
-            {
-                _phoneNumber = value;
-                OnPropertyChanged(nameof(PhoneNumber));
             }
         }
+        public DateTimeOffset DateOfBirth { get; set; }
 
         #endregion
 
         #region Constructor
 
-        public PatientRegistration()
+        public Patient2()
         {
             
         }
 
-        public PatientRegistration(int id,string fullName, string address, string gender, DateTimeOffset dateOfBirth, string phoneNumber)
-        {
-            
-            _fullName = fullName;
-            _address = address;
-            _gender = gender;
-            _dateOfBirth = dateOfBirth;
-            _phoneNumber = phoneNumber;
-        }
         #endregion
     }
       

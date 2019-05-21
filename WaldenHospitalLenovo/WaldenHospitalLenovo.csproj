@@ -119,17 +119,25 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Catalog\AppointmentCatalog.cs" />
+    <Compile Include="Catalog\DoctorsCatalog.cs" />
+    <Compile Include="Catalog\LoginCatalog.cs" />
+    <Compile Include="Catalog\PatientRegistrationCatalog.cs" />
+    <Compile Include="Catalog\SearchCatalog.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
-    <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\NotifyPropertyChanged.cs" />
+    <Compile Include="Common\RelayCommandArgs.cs" />
+    <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="ViewModel\AppointmentVm.cs" />
+    <Compile Include="ViewModel\AppointmentVM.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\RegistrationVm.cs" />
+    <Compile Include="ViewModel\PatientRegistrationVm.cs" />
     <Compile Include="ViewPage\AppointmentPageWald.xaml.cs">
       <DependentUpon>AppointmentPageWald.xaml</DependentUpon>
     </Compile>
@@ -139,8 +147,8 @@
     <Compile Include="ViewPage\MainPageWald.xaml.cs">
       <DependentUpon>MainPageWald.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPage\PatientIdPageWald.xaml.cs">
-      <DependentUpon>PatientIdPageWald.xaml</DependentUpon>
+    <Compile Include="ViewPage\PatientIdCard.xaml.cs">
+      <DependentUpon>PatientIdCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPage\RegistrationPageWald.xaml.cs">
       <DependentUpon>RegistrationPageWald.xaml</DependentUpon>
@@ -173,6 +181,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.3</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="ViewPage\AppointmentPageWald.xaml">
@@ -187,7 +198,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPage\PatientIdPageWald.xaml">
+    <Page Include="ViewPage\PatientIdCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

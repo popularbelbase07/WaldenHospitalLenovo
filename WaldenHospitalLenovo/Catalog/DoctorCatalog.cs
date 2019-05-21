@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WaldenHospitalLenovo.ViewModel
+namespace WaldenHospitalLenovo.Catalog
 {
-    class RegistrationPageVm
+    class DoctorCatalog
     {
     }
 }
