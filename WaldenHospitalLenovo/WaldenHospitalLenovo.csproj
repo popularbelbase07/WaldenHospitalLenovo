@@ -123,8 +123,6 @@
     <Compile Include="Catalog\PatientCatalog.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Event Handler\NotifyPropertyChanged.cs" />
-    <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Patient.cs" />
