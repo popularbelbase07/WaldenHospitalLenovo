@@ -11,16 +11,25 @@ namespace WaldenHospitalLenovo.Model
     {
         #region Instance feilds
        //............................
-
+       private int _id;
         private string _fullName;
         private string _address;
         private string _gender;
         private DateTimeOffset _dateOfBirth;
-        private int _phoneNumber;
+        private string _phoneNumber;
 
         #endregion
 
         #region Properties
+        public int ID
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(ID));
+            }
+        }
 
         public string FullName
         {
@@ -51,7 +60,7 @@ namespace WaldenHospitalLenovo.Model
             } }
         public DateTime DateOfBirth { get; set; }
 
-        public int PhoneNumber
+        public string PhoneNumber
         {
             get { return _phoneNumber; }
             set
@@ -70,8 +79,9 @@ namespace WaldenHospitalLenovo.Model
             
         }
 
-        public PatientRegistration(string fullName, string address, string gender, DateTimeOffset dateOfBirth, int phoneNumber)
+        public PatientRegistration(int id,string fullName, string address, string gender, DateTimeOffset dateOfBirth, string phoneNumber)
         {
+            
             _fullName = fullName;
             _address = address;
             _gender = gender;

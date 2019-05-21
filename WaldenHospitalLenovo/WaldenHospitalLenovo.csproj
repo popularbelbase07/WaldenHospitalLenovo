@@ -119,11 +119,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Catalog\AppointmentCatalog.cs" />
+    <Compile Include="Catalog\DoctorsCatalog.cs" />
     <Compile Include="Catalog\LoginCatalog.cs" />
     <Compile Include="Catalog\PatientRegistrationCatalog.cs" />
+    <Compile Include="Catalog\SearchCatalog.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\NotifyPropertyChanged.cs" />
+    <Compile Include="Common\RelayCommandArgs.cs" />
+    <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Patient.cs" />

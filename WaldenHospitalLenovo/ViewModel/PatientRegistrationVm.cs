@@ -34,7 +34,7 @@ namespace WaldenHospitalLenovo.ViewModel
         {
             try
             {
-                Prc.Patients?.Add(new Patient(NewPatient.FullName, NewPatient.Address, NewPatient.Gender, NewPatient.DateOfBirth, NewPatient.PhoneNumber.ToString()));
+                //Prc.Patients?.Add(new Patient(NewPatient.FullName, NewPatient.Address, NewPatient.Gender, NewPatient.DateOfBirth,NewPatient.PhoneNumber);
                 Type type = typeof(PatientIdCard);
                 FrameNavigate.ActivateFrameworkNavigation(type);
 

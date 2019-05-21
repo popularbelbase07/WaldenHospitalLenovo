@@ -11,6 +11,7 @@ namespace WaldenHospitalLenovo.Model
     public class Patient : NotifyPropertyChanged
     {
         #region Instance feilds
+
         //............................
         private int _id;
         private string _fullName;
@@ -22,6 +23,17 @@ namespace WaldenHospitalLenovo.Model
         #endregion
 
         #region Properties
+
+
+        public int ID
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(ID));
+            }
+        }
 
         public string FullName
         {
@@ -52,6 +64,7 @@ namespace WaldenHospitalLenovo.Model
                 OnPropertyChanged(nameof(Gender));
             }
         }
+
         public DateTime DateOfBirth { get; set; }
 
         public string PhoneNumber
@@ -61,15 +74,6 @@ namespace WaldenHospitalLenovo.Model
             {
                 _phoneNumber = value;
                 OnPropertyChanged(nameof(PhoneNumber));
-            }
-        }
-        public int ID
-        {
-            get => _id;
-            set
-            {
-                _id = value;
-                OnPropertyChanged(nameof(ID));
             }
         }
 
@@ -82,15 +86,13 @@ namespace WaldenHospitalLenovo.Model
 
         }
 
-        public Patient(string fullName, string address, string gender, DateTime dateOfBirth, string phoneNumber)
+        public Patient(int id, string fullName)
         {
-
+            _id = id;
             _fullName = fullName;
-            _address = address;
-            _gender = gender;
-            _dateOfBirth = dateOfBirth;
-            _phoneNumber = phoneNumber;
+
         }
+
         public Patient(int id, string fullName, string address, string gender, DateTime dateOfBirth, string phoneNumber)
         {
             _id = id;
@@ -100,7 +102,12 @@ namespace WaldenHospitalLenovo.Model
             _dateOfBirth = dateOfBirth;
             _phoneNumber = phoneNumber;
         }
-        #endregion
-    }
 
+        #endregion
+
+        public override string ToString()
+        {
+            return $"{_id}-{FullName}";
+        }
+    }
 }
