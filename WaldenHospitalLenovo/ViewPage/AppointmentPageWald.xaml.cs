@@ -47,10 +47,10 @@ namespace WaldenHospitalLenovo.ViewPage
             AppointmentVm.From = myPicker.Time;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(RegistrationPageWald));
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Frame.Navigate(typeof(RegistrationPageWald));
+        //}
         
     }
 
