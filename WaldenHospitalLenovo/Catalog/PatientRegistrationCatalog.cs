@@ -21,6 +21,7 @@ namespace WaldenHospitalLenovo.Catalog
         //    //Create Object instance for business class(Model)
         //    patientRegistrationInstance = new Patient();
         //}
+        //bcvbb
 
         ////This Registration property check first if Registration is not null
         ////if Registration is null create an object instance otherWise return the current Registration
