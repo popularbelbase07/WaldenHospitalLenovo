@@ -12,10 +12,10 @@ namespace WaldenHospitalLenovo.Catalog
    {
        private static ObservableCollection<Patient> _searchPatients;
 
-       //public static ObservableCollection<Patient> SearchPatients { get; set; }
+        public static ObservableCollection<Patient> SearchPatients { get; set; }
 
 
-       public static ObservableCollection<Patient> SearchPatient()
+        public static ObservableCollection<Patient> SearchPatient()
        {
            _searchPatients = new ObservableCollection<Patient>()
            {

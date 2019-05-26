@@ -57,11 +57,7 @@ namespace WaldenHospitalLenovo.Model
 
       }
 
-      //public Appointment(Patient p , Doctor d,  DateTime  from, DateTime to , DateTime calender )
-      //{
-
-
-      //}
+      
       public Appointment(Patient p, Doctor d, DateTime @from, DateTime to, DateTime calender)
       {
           this.p = p;

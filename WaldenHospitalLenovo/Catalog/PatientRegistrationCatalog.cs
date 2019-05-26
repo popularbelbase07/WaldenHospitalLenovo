@@ -26,6 +26,7 @@ namespace WaldenHospitalLenovo.Catalog
             };
 
         }
+          
 
         public List<Patient> check(string name)
         {
@@ -59,8 +60,10 @@ namespace WaldenHospitalLenovo.Catalog
             get => _patients;
             set => _patients = value;
         }
+       
 
     }
+    
 
 }
 

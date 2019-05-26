@@ -26,25 +26,34 @@
 
 
         <Grid.DataContext>
-            <viewModel:AppointmentVm></viewModel:AppointmentVm>
+            <viewModel:AppointmentVm/>
         </Grid.DataContext>
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <TextBlock Text="Search"/>
-            <TextBox Text="{Binding SearchKey, Mode=TwoWay}" Margin="10,0,539,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            <Button  Command="{Binding SearchCommand}" Content="Search" Background="Yellow"></Button>
 
+        <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button  Content="BOOK APPOINTMENT" Foreground="White" FontSize="25" Width="270" Background="Transparent" BorderThickness="2"/>
+            <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
+            <Button Command ="{Binding NewRegistration}"  Content="NEW REGISTRATION" Foreground="White" FontSize="25" Width="270" Background="Transparent" BorderThickness="2" Click="Button_Click" />
         </StackPanel>
+        
+        <!--<StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="Search" FontSize="15" Foreground="White" />
+            <TextBox Text="{Binding SearchKey, Mode=TwoWay}" Margin="10,0,539,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Button  Command="{Binding SearchCommand}" Content="Search" Foreground="White" Background="DarkSalmon"></Button>
 
-        <Button Command="{Binding Logout}" Content="LOG OUT" Margin="0,50,100,10" HorizontalAlignment="Right" Background="Red" BorderBrush="Transparent"
+        </StackPanel>-->
+        
+         <StackPanel Grid.Row="0" Grid.Column="2">
+        <Button  Command="{Binding Logout}" Content="LOG OUT" Margin="0,50,100,10" HorizontalAlignment="Right" Background="DarkSalmon"  BorderBrush="Transparent"
                     Foreground="AliceBlue" FontSize="25" Width="140" VerticalAlignment="Top" Grid.Column="2" />
-
+        </StackPanel>
+        
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
+            <CalendarDatePicker PlaceholderText="Select A Date"  Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
                                 Margin="190,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
             </CalendarDatePicker>
         </StackPanel>
 
-        <StackPanel   Background="red">
+        <!--<StackPanel Grid.Row="0" Grid.Column="0"  Background="Transparent">
             <ListView ItemsSource="{Binding Found}"  SelectedItem="{Binding SelectedPatient , Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -59,67 +68,61 @@
                                 <TextBlock Foreground="White" Text="{Binding   ID}" FontSize="24" />
                             </StackPanel>
                         </StackPanel>
-                        <!--<StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="White" Text="ID:" FontSize="24" />
-                <TextBlock Foreground="White" Text="{Binding  ID}" FontSize="24" />
-            </StackPanel>-->
-
+                      
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackPanel>
+        </StackPanel>-->
+        
+        
         <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <TimePicker  x:Name="myPicker" SelectedTimeChanged="TimePicker_OnSelectedTimeChanged"  Header="Time From" Background="Transparent" BorderThickness="2" Foreground="White"
+            <TimePicker  x:Name="myPicker" SelectedTimeChanged="TimePicker_OnSelectedTimeChanged"  Header="Time From"  Background="Transparent" BorderThickness="2" Foreground="White"
                         />
-                <TimePicker Header="Time To" Background="Transparent" BorderThickness="2" Foreground="White"
-                            />
-
-
-
+                <TimePicker Header="Time To"  Background="Transparent" BorderThickness="2" Foreground="White"/>
 
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch"  >
-            <StackPanel>
-                <TextBlock Text="Search Patients"></TextBlock>
+         
+          <!--Using AutosuggestBox Property-->
+        
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <AutoSuggestBox x:Name="AutoSuggestBox"
+                            PlaceholderText="Search By keywords" 
+                            QueryIcon="Find"
+                            ItemsSource="{Binding Patients,Mode=TwoWay}"
+                            HorizontalAlignment="Left" Height="62" 
+                             Header="Search Patients" Margin="0,150" Foreground="White" Width="350" >
+                <AutoSuggestBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <Run Text="{Binding ID , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Run Text="{Binding FullName , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+                            
+                        </TextBlock>
+                    </DataTemplate>
+                </AutoSuggestBox.ItemTemplate>
+                <!--Event Handler Method-->
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="QuerySubmitted">
+                        <core:EventTriggerBehavior.Actions>
+                            <core:InvokeCommandAction Command="{Binding SuggessionSelectPatientQuerySubmitted}"/>
+                        </core:EventTriggerBehavior.Actions>
+                    </core:EventTriggerBehavior>
 
-                <AutoSuggestBox  HorizontalAlignment="Stretch" 
-                                Margin="0,0,0,0" VerticalAlignment="Center" 
-                                RenderTransformOrigin="-0.492,0.735"
-                                x:Name="SuggestBoxForPatient"
-                                QueryIcon="Find" UpdateTextOnSelect="True" ItemsSource="{Binding SearchPatient}" 
-                                PlaceholderText="Search by Patients">
-                    <!--We used this code for alternative event handler method-->
-                    <interactivity:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="QuerySubmitted">
-                            <core:EventTriggerBehavior.Actions>
-                                <core:InvokeCommandAction Command="{Binding SuggessionSelectPatientQuerySubmitted}"/>
-                            </core:EventTriggerBehavior.Actions>
-                        </core:EventTriggerBehavior>
-                    </interactivity:Interaction.Behaviors>
-                </AutoSuggestBox>
-                <!--<ListBox Background="CornflowerBlue"  FontSize="26" ItemsSource="{Binding SearchPatient , Mode=TwoWay}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Foreground="White" Text="{Binding Path=FullName}" FontSize="24" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-            </StackPanel>-->
-            </StackPanel>
-
-
-
-
-
-
+                </interactivity:Interaction.Behaviors>
+              
+            </AutoSuggestBox>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Left"   Text="{Binding DisplayChosenText, Mode=TwoWay}" TextWrapping="Wrap" Width="150"/>
+        </StackPanel>
 
 
-            <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                <ComboBox  HorizontalAlignment="Left"  Margin="0,137,0,0" Header=" Doctor's Name" VerticalAlignment="Top" ItemsSource="{Binding Doctors}" Height="62" Width="350" PlaceholderText="Select Doctor">
+
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <ComboBox  HorizontalAlignment="Left"  Margin="0,137,0,0" Header=" Doctor's Name"  Foreground="White" VerticalAlignment="Top" ItemsSource="{Binding Doctors}" Height="62" Width="350" PlaceholderText="Select Doctor">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -129,20 +132,9 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <!--<TextBlock Text="Doctor's Name" FontSize="23" Width="190" />
-            <ComboBox  x:Name="ComboBox1" ItemsSource="{Binding ListDoctor}" Width="150"  BorderThickness="2" BorderBrush="Transparent">
-
-            </ComboBox>-->
+               
             </StackPanel>
-            <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="BOOK APPOINTMENT" FontSize="25" Width="300" Background="Transparent" BorderThickness="2"/>
-                <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
-                <Button Command ="{Binding NewRegistration}"  Content="NEW REGISTRATION" FontSize="25" Width="300" Background="Transparent" BorderThickness="2" Click="Button_Click" />
-            </StackPanel>
-        </StackPanel>
-
-
-
-
+            
+       
     </Grid>
 </Page>

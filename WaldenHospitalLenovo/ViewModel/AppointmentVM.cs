@@ -17,7 +17,7 @@ namespace WaldenHospitalLenovo.ViewModel
     public class AppointmentVm : NotifyPropertyChanged
     {
         private ObservableCollection<Patient> _patients;
-        private string _displayChosenText = "Patient Info";
+        private string _displayChosenText = "Find Existing Patient";
         
         private PatientRegistrationCatalog prc;
         public ObservableCollection<Patient> SearchPatient
@@ -65,7 +65,7 @@ namespace WaldenHospitalLenovo.ViewModel
         {
             SuggessionSelectPatientQuerySubmitted = new RelayCommand(GoSearching);
             NewRegistration = new RelayCommand(NewRegistrationForm);
-            SearchCommand = new RelayCommand(SearchPatientNew);
+            //SearchCommand = new RelayCommand(SearchPatientNew);
             prc = PatientRegistrationCatalog.Instance;
             Patient = new Patient();
             //SearchPatient = prc.Patients;
@@ -96,32 +96,20 @@ namespace WaldenHospitalLenovo.ViewModel
         }
         public Patient Patient { get; set; }
 
-        private string _searchkey;
+        //private string _searchkey;
 
-        public string SearchKey
-        {
-            get { return _searchkey;}
-            set
-            {
-                _searchkey = value;
-                OnPropertyChanged(nameof(SearchKey));
-
-            }
-        }
-
-        //private string _gender;
-
-        //public string Gender
+        //public string SearchKey
         //{
-        //    get { return Found.Gender; }
+        //    get { return _searchkey;}
         //    set
         //    {
-        //        _gender = Found.Gender;
-        //        OnPropertyChanged(nameof(Gender));
+        //        _searchkey = value;
+        //        OnPropertyChanged(nameof(SearchKey));
 
         //    }
-
         //}
+
+        
 
         private TimeSpan _from;
         public TimeSpan From
@@ -146,12 +134,12 @@ namespace WaldenHospitalLenovo.ViewModel
             }
         }
 
-        public void SearchPatientNew()
-        {
-           Found= prc.check(SearchKey);
+        //public void SearchPatientNew()
+        //{
+        //   Found= prc.check(SearchKey);
 
 
-        }
+        //}
 
         public void NewRegistrationForm()
         {
@@ -171,18 +159,7 @@ namespace WaldenHospitalLenovo.ViewModel
             FrameNavigate.ActivateFrameworkNavigation(logouttype);
         }
 
-        //public void DateCheck(DateTime datetime)
-        //{
-        //    if (datetime==(DateTime.Now))
-        //    {
-        //        datetime=new DateTime();
-        //    }
-        //    else
-        //    {
-
-        //        var date = new MessageDialog("You must be choose after this Hour !!");
-        //        date.ShowAsync();
-        //    }
+       
 
         // ICommand ..................................
         public ICommand SuggessionSelectPatientQuerySubmitted1 => new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(SuggessionSelectPatientQuerySubmittedDelegateMethod);
