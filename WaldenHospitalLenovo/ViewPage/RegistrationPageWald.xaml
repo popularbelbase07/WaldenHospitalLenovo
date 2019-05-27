@@ -18,7 +18,11 @@
                 <TextBlock Text="Patient Registration" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="40" FontWeight="ExtraBold" Foreground="Teal" ></TextBlock>
             </StackPanel>
             <StackPanel  >
-                <TextBlock HorizontalAlignment="Left" Margin="208,100,0,0" Text="Full Name" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                <TextBlock HorizontalAlignment="Left" Margin="208,100,0,0" Text="Patient Id" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
+                           FontSize ="30" Width="214"/>
+                <TextBox Text="{Binding NewPatient.ID , Mode=TwoWay }"  HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400" />
+
+<TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Full Name" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
                        FontSize ="30" Width="214"/>
                 <TextBox Text="{Binding NewPatient.FullName , Mode=TwoWay }"  HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400" />
                 <TextBlock HorizontalAlignment="Left" Margin="208,25,0,0" Text="Address" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Medium" 
@@ -36,8 +40,8 @@
                 <DatePicker Date="{Binding NewPatient.DateOfBirth , Mode=TwoWay}" HorizontalAlignment="Left" Margin="700,-50,0,0" VerticalAlignment="Top" Height="61" Width="400"/>
             <Button Command="{Binding NewRegistration}" Content="New Registration" BorderBrush="IndianRed" BorderThickness="5" Background="Green" FontSize="20" 
                     HorizontalAlignment="Left"  Margin="600,50,0,0" VerticalAlignment="Top" Height="50" Width="200"/>
-                <Button  Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
-                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="Button_Click" />
+                <Button Command="{Binding GoBackCommand}" Content="Back" BorderThickness="5" BorderBrush="BurlyWood" Background="IndianRed"  
+                    HorizontalAlignment="Left" Margin="900,-50,0,0" VerticalAlignment="Top" Height="50" Width="200" />
             </StackPanel>
 
 

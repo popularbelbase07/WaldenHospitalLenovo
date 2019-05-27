@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using Windows.UI.Xaml.Controls;
 using WaldenHospitalLenovo.Catalog;
 using WaldenHospitalLenovo.Common;
 using WaldenHospitalLenovo.Model;
@@ -13,14 +15,16 @@ namespace WaldenHospitalLenovo.ViewModel
         //Property
         public ObservableCollection<Login> ListLogin { get; set; }
         public RelayCommand LoginCommand { get; set; }
+        public RelayCommand DocLogin { get; set; }
 
         //Constructor
         public LoginVm()
         {
             ListLogin = new ObservableCollection<Login>();
             lc= new LoginCatalog();
-           
+           //Passing method is delegate type
             LoginCommand= new RelayCommand(toLogin);
+          
 
         }
      
@@ -46,6 +50,7 @@ namespace WaldenHospitalLenovo.ViewModel
 
         }
 
+      
 
 
     }

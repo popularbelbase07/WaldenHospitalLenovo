@@ -3,34 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 using WaldenHospitalLenovo.Common;
 
 namespace WaldenHospitalLenovo.Model
 {
   public  class Appointment :NotifyPropertyChanged
   {
-      private Patient p;
-      private Doctor d;
+      private int _patientId;
+      private int _doctorId;
       private DateTime _from;
       private DateTime _to;
-      private DateTime calender;
-      public Patient P
+      private DateTime _calender;
+      public int  PatientId
       {
-          get { return p;}
+          get => _patientId;
           set
           {
-              p = value;
-              OnPropertyChanged(nameof(p));
+              _patientId = value;
+              OnPropertyChanged(nameof(PatientId));
           }
 
       }
-      public Doctor D
+      public int DoctorId
       {
-          get { return d; }
+          get { return _doctorId; }
           set
           {
-              d = value;
-              OnPropertyChanged(nameof(D));
+              _doctorId = value;
+              OnPropertyChanged(nameof(DoctorId));
           }
       }
       public DateTime TimeFrom
@@ -51,25 +52,28 @@ namespace WaldenHospitalLenovo.Model
               OnPropertyChanged(nameof(TimeTo));
           }
       }
+      public DateTime CalenderDate
+      {
+          get { return _calender; }
+          set
+          {
+              _calender = value;
+              OnPropertyChanged(nameof(CalenderDate));
+          }
+      }
 
         public Appointment()
       {
 
       }
 
-      //public Appointment(Patient p , Doctor d,  DateTime  from, DateTime to , DateTime calender )
-      //{
-
-
-      //}
-      public Appointment(Patient p, Doctor d, DateTime @from, DateTime to, DateTime calender)
-      {
-          this.p = p;
-          this.d = d;
-          _from = @from;
-          _to = to;
-          this.calender = calender;
-      }
-
+        public Appointment(int patientId, int doctorId, DateTime @from, DateTime to, DateTime calender)
+        {
+            _patientId = patientId;
+            _doctorId = doctorId;
+            _from = @from;
+            _to = to;
+            _calender = calender;
+        }
   }
 }

@@ -10,7 +10,7 @@ namespace WaldenHospitalLenovo.Model
     public class PatientRegistration : NotifyPropertyChanged
     {
         #region Instance feilds
-       //............................
+     
        private int _id;
         private string _fullName;
         private string _address;
@@ -81,13 +81,14 @@ namespace WaldenHospitalLenovo.Model
 
         public PatientRegistration(int id,string fullName, string address, string gender, DateTimeOffset dateOfBirth, string phoneNumber)
         {
-            
+            _id = id;
             _fullName = fullName;
             _address = address;
             _gender = gender;
             _dateOfBirth = dateOfBirth;
             _phoneNumber = phoneNumber;
         }
+
         #endregion
     }
       

@@ -28,24 +28,26 @@
         <Grid.DataContext>
             <viewModel:AppointmentVm></viewModel:AppointmentVm>
         </Grid.DataContext>
-        <StackPanel Grid.Row="0" Grid.Column="1">
+        <!--<StackPanel Grid.Row="0" Grid.Column="1">
             <TextBlock Text="Search"/>
             <TextBox Text="{Binding SearchKey, Mode=TwoWay}" Margin="10,0,539,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <Button  Command="{Binding SearchCommand}" Content="Search" Background="Yellow"></Button>
 
-        </StackPanel>
+        </StackPanel>-->
 
         <Button Command="{Binding Logout}" Content="LOG OUT" Margin="0,50,100,10" HorizontalAlignment="Right" Background="Red" BorderBrush="Transparent"
                     Foreground="AliceBlue" FontSize="25" Width="140" VerticalAlignment="Top" Grid.Column="2" />
 
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <CalendarDatePicker PlaceholderText="Select A Date" Header="CALANDER" FontSize="18"  HorizontalAlignment="Right"
+            <CalendarDatePicker  Style="{Binding Calender , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged }"
+                PlaceholderText="Calender" FirstDayOfWeek="Monday" DateFormat="{}{day.integer}{month.full}{year.full}"  FontSize="18"  HorizontalAlignment="Right"
                                 Margin="190,150,250,50" Foreground="White" BorderBrush="Transparent" BorderThickness="2" Background="Transparent">
             </CalendarDatePicker>
         </StackPanel>
 
-        <StackPanel   Background="red">
-            <ListView ItemsSource="{Binding Found}"  SelectedItem="{Binding SelectedPatient , Mode=TwoWay}">
+        <StackPanel Grid.Row="0" Grid.Column="0" Background="Transparent">
+            <TextBlock Text="{Binding DisplayChosenText , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
+            <!--<ListView ItemsSource="{Binding Found}"  SelectedItem="{Binding SelectedPatient , Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel >
@@ -59,25 +61,22 @@
                                 <TextBlock Foreground="White" Text="{Binding   ID}" FontSize="24" />
                             </StackPanel>
                         </StackPanel>
-                        <!--<StackPanel Orientation="Horizontal">
+                        --><!--<StackPanel Orientation="Horizontal">
                 <TextBlock Foreground="White" Text="ID:" FontSize="24" />
                 <TextBlock Foreground="White" Text="{Binding  ID}" FontSize="24" />
-            </StackPanel>-->
+            </StackPanel>--><!--
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <TimePicker  x:Name="myPicker" SelectedTimeChanged="TimePicker_OnSelectedTimeChanged"  Header="Time From" Background="Transparent" BorderThickness="2" Foreground="White"
-                        />
-                <TimePicker Header="Time To" Background="Transparent" BorderThickness="2" Foreground="White"
-                            />
-
-
-
-
+            <TimePicker   
+                Header="Time From" Background="Transparent" 
+                BorderThickness="2" Foreground="White" Time="{Binding FromTime , Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TimePicker Header="Time To" Background="Transparent" 
+                            BorderThickness="2" Foreground="White" Time="{Binding ToTime , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch"  >
             <StackPanel>
@@ -89,6 +88,14 @@
                                 x:Name="SuggestBoxForPatient"
                                 QueryIcon="Find" UpdateTextOnSelect="True" ItemsSource="{Binding SearchPatient}" 
                                 PlaceholderText="Search by Patients">
+                    <AutoSuggestBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Run Text="{Binding ID}"/>
+                                <Run Text="{Binding FullName}"/>
+                            </TextBlock>
+                        </DataTemplate>
+                    </AutoSuggestBox.ItemTemplate>
                     <!--We used this code for alternative event handler method-->
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="QuerySubmitted">
@@ -109,13 +116,6 @@
                     </ListBox>
             </StackPanel>-->
             </StackPanel>
-
-
-
-
-
-
-
 
             <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 

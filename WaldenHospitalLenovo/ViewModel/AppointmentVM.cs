@@ -16,21 +16,28 @@ namespace WaldenHospitalLenovo.ViewModel
 {
     public class AppointmentVm : NotifyPropertyChanged
     {
+        private DateTime _calender;
         private ObservableCollection<Patient> _patients;
         private string _displayChosenText = "Patient Info";
         
         private PatientRegistrationCatalog prc;
         public ObservableCollection<Patient> SearchPatient
         {
-            get { return SearchCatalog.SearchPatient(); }
+            get => SearchCatalog.SearchPatient();
+            set {  }
         }
+
         public RelayCommand NewRegistration { get; set; }
         public RelayCommand SearchCommand { get; set; }
-        public RelayCommand SuggessionSelectPatientQuerySubmitted { get; set; }
+        public ICommand SuggessionSelectPatientQuerySubmitted { get; set; }
         public string SearchListBox { get; set; }
         public string Search { get; set; }
         public RelayCommand Logout { get; set; }
         public List<Doctor> DoctorName { get; set; }
+        public DateTimeOffset Calender { get; set; }
+        public TimeSpan FromTime { get; set; }
+        public TimeSpan ToTime { get; set; }
+
 
         public ObservableCollection<Patient> Patients
         {
@@ -63,25 +70,29 @@ namespace WaldenHospitalLenovo.ViewModel
 
         public AppointmentVm()
         {
-            SuggessionSelectPatientQuerySubmitted = new RelayCommand(GoSearching);
+            SuggessionSelectPatientQuerySubmitted = new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(GoSearching);
             NewRegistration = new RelayCommand(NewRegistrationForm);
             SearchCommand = new RelayCommand(SearchPatientNew);
             prc = PatientRegistrationCatalog.Instance;
             Patient = new Patient();
-            //SearchPatient = prc.Patients;
+            SearchPatient = prc.Patients;
             Logout = new RelayCommand(NavigatePage);
             DoctorName = new List<Doctor>();
             dc = new DoctorsCatalog();
             Patients = new ObservableCollection<Patient>();
-            _patients = SearchCatalog.SearchPatient();
+            //_patients = SearchCatalog.SearchPatient();
             prc= new PatientRegistrationCatalog();
             _from= new TimeSpan();
             _selectedPatient= new Patient();
-
-           
-
+            _calender = new DateTime();
+         
+           DateTime dt = DateTime.Now;
+           Calender = new DateTimeOffset(dt.Year , dt.Month , dt.Day , dt.Hour , dt.Minute , dt.Second, new TimeSpan());
+           FromTime = new TimeSpan(dt.Day , dt.Hour, dt.Minute);
+           ToTime = new TimeSpan(dt.Day, dt.Hour, dt.Minute);
 
         }
+
 
         private Patient _selectedPatient;
 
@@ -109,20 +120,7 @@ namespace WaldenHospitalLenovo.ViewModel
             }
         }
 
-        //private string _gender;
-
-        //public string Gender
-        //{
-        //    get { return Found.Gender; }
-        //    set
-        //    {
-        //        _gender = Found.Gender;
-        //        OnPropertyChanged(nameof(Gender));
-
-        //    }
-
-        //}
-
+        
         private TimeSpan _from;
         public TimeSpan From
         {
@@ -173,9 +171,9 @@ namespace WaldenHospitalLenovo.ViewModel
 
         //public void DateCheck(DateTime datetime)
         //{
-        //    if (datetime==(DateTime.Now))
+        //    if (datetime == (DateTime.Now))
         //    {
-        //        datetime=new DateTime();
+        //        datetime = new DateTime();
         //    }
         //    else
         //    {
@@ -183,10 +181,11 @@ namespace WaldenHospitalLenovo.ViewModel
         //        var date = new MessageDialog("You must be choose after this Hour !!");
         //        date.ShowAsync();
         //    }
+        //}
 
         // ICommand ..................................
-        public ICommand SuggessionSelectPatientQuerySubmitted1 => new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(SuggessionSelectPatientQuerySubmittedDelegateMethod);
-        private void SuggessionSelectPatientQuerySubmittedDelegateMethod(AutoSuggestBoxQuerySubmittedEventArgs args)
+        //public ICommand SuggessionSelectPatientQuerySubmitted1 => new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(GoSearching);
+        private void GoSearching(AutoSuggestBoxQuerySubmittedEventArgs args)
         {
             if (args.ChosenSuggestion != null)
             {
@@ -214,8 +213,13 @@ namespace WaldenHospitalLenovo.ViewModel
         }
         public void RefreshPatientList()
         {
-            _patients = SearchCatalog.SearchPatient();
+            //_patients =PatientRegistrationCatalog
         }
+        public Appointment PatientId { get; set; }
+        public Appointment  DoctorId { get; set; }
+        public Appointment CalenderDate { get; set; }
+        public Appointment TimeFrom { get; set; }
+        public Appointment TimeTo { get; set; }
     }
 
 

@@ -36,5 +36,10 @@ namespace WaldenHospitalLenovo.ViewPage
         {
 
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //Frame.Navigate(typeof(LoginPageWald));
+        }
     }
 }

@@ -124,6 +124,7 @@
     <Compile Include="Catalog\LoginCatalog.cs" />
     <Compile Include="Catalog\PatientRegistrationCatalog.cs" />
     <Compile Include="Catalog\SearchCatalog.cs" />
+    <Compile Include="Common\DateTimeConverter.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\NotifyPropertyChanged.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Model\PatientRegistration.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\AppointmentVM.cs" />
+    <Compile Include="ViewModel\IdCardVm.cs" />
     <Compile Include="ViewModel\LoginVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\PatientRegistrationVm.cs" />

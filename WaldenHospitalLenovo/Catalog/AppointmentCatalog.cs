@@ -1,49 +1,42 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using WaldenHospitalLenovo.Model;
+ using WaldenHospitalLenovo.ViewModel;
 
-namespace WaldenHospitalLenovo.Catalog
+ namespace WaldenHospitalLenovo.Catalog
 {
-   public  class AppointmentCatalog
-   {
-       //private List<Appointment> myAppointments;
+    public class AppointmentCatalog
+    {
+        public ObservableCollection<Appointment> Appoint { get; set; }
 
-       //public AppointmentCatalog()
-       //{
-       //    myAppointments= new List<Appointment>();
-       //    Appointment ap= new Appointment();
-       //    // we are here
-       //}
+        public AppointmentCatalog()
+        {
+            Appoint=new ObservableCollection<Appointment>();
+            
+        }
 
-       ////public void addAppointment( , , , , , )
-       ////{
-       ////     Appointment ap= new Appointment(, , , , , );
-       //    myAppointments.Add(ap);
-       //}
-       private ObservableCollection<Appointment> myAppointments;
-       public ObservableCollection<Appointment> GetAppointment
-       {
-           get { return myAppointments;}
-           set { myAppointments = value; }
-       }
+        public ObservableCollection<Appointment>GetAppointment()
+        {
+           return new ObservableCollection<Appointment>()
+           {
+              new Appointment()
+              {
+                 DoctorId = 1223 , PatientId = 234, TimeFrom = new DateTime() , TimeTo = new DateTime().AddDays(1) , Calender = DateTime.Now
+              }
+           }; 
+        }
 
-       private static AppointmentCatalog _instance;
+        public async void BookAppointment()
+        {
+            Appointment newAppointment=new Appointment();
+            PatientId = AppointmentVm.}
+    }
+  
 
-       public static AppointmentCatalog Instance => _instance ?? (new AppointmentCatalog());
-
-       public AppointmentCatalog()
-       {
-         myAppointments=new ObservableCollection<Appointment>()
-         {
-             //new Appointment(1,2,(DateTime.Now,DateTime.Now.Hour ,new DateTime(2019/05/22)))
-           
-         };
-       }
-
-
-   }
 }

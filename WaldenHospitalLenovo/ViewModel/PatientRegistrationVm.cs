@@ -34,7 +34,9 @@ namespace WaldenHospitalLenovo.ViewModel
         {
             try
             {
-                //Prc.Patients?.Add(new Patient(NewPatient.FullName, NewPatient.Address, NewPatient.Gender, NewPatient.DateOfBirth,NewPatient.PhoneNumber);
+                Patient newPatient = new Patient(NewPatient.ID, NewPatient.FullName, NewPatient.Address, NewPatient.Gender, NewPatient.DateOfBirth, NewPatient.PhoneNumber);
+                Prc.Patients?.Add(newPatient);
+                Prc.StorePatient(newPatient);
                 Type type = typeof(PatientIdCard);
                 FrameNavigate.ActivateFrameworkNavigation(type);
 
@@ -48,7 +50,7 @@ namespace WaldenHospitalLenovo.ViewModel
 
         public void GoBack()
         {
-            Type type = typeof(PatientIdCard);
+            Type type = typeof(AppointmentPageWald);
             FrameNavigate.ActivateFrameworkNavigation(type);
         }
     }

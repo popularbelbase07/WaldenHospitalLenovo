@@ -44,7 +44,7 @@ namespace WaldenHospitalLenovo.ViewPage
 
         private void TimePicker_OnSelectedTimeChanged(TimePicker sender, TimePickerSelectedValueChangedEventArgs args)
         {
-            AppointmentVm.From = myPicker.Time;
+           // AppointmentVm.From = myPicker.Time;
         }
     }
 }
