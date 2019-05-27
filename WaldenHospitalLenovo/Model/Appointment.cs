@@ -64,7 +64,7 @@ namespace WaldenHospitalLenovo.Model
 
         public Appointment()
       {
-
+           //a
       }
 
         public Appointment(int patientId, int doctorId, DateTime @from, DateTime to, DateTime calender)
