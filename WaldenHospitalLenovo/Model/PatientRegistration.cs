@@ -10,26 +10,17 @@ namespace WaldenHospitalLenovo.Model
     public class PatientRegistration : NotifyPropertyChanged
     {
         #region Instance feilds
-     
-       private int _id;
+       //............................
+
         private string _fullName;
         private string _address;
         private string _gender;
         private DateTimeOffset _dateOfBirth;
-        private string _phoneNumber;
+        private int _phoneNumber;
 
         #endregion
 
         #region Properties
-        public int ID
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                OnPropertyChanged(nameof(ID));
-            }
-        }
 
         public string FullName
         {
@@ -60,7 +51,7 @@ namespace WaldenHospitalLenovo.Model
             } }
         public DateTime DateOfBirth { get; set; }
 
-        public string PhoneNumber
+        public int PhoneNumber
         {
             get { return _phoneNumber; }
             set
@@ -79,16 +70,14 @@ namespace WaldenHospitalLenovo.Model
             
         }
 
-        public PatientRegistration(int id,string fullName, string address, string gender, DateTimeOffset dateOfBirth, string phoneNumber)
+        public PatientRegistration(string fullName, string address, string gender, DateTimeOffset dateOfBirth, int phoneNumber)
         {
-            _id = id;
             _fullName = fullName;
             _address = address;
             _gender = gender;
             _dateOfBirth = dateOfBirth;
             _phoneNumber = phoneNumber;
         }
-
         #endregion
     }
       
