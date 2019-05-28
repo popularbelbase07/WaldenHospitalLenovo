@@ -17,26 +17,37 @@ using WaldenHospitalLenovo.Model;
 
         public AppointmentCatalog()
         {
-            Appoint=new ObservableCollection<Appointment>();
-            
+            Appoint = new ObservableCollection<Appointment>();
+
+
         }
 
-        public ObservableCollection<Appointment>GetAppointment()
+        public ObservableCollection<Appointment> GetAppointment()
         {
-           return new ObservableCollection<Appointment>()
-           {
-              new Appointment()
-              {
-                 DoctorId = 1223 , PatientId = 234, TimeFrom = new DateTime() , TimeTo = new DateTime().AddDays(1) , Calender = DateTime.Now
-              }
-           }; 
+            return new ObservableCollection<Appointment>()
+            {
+                new Appointment()
+                {
+                    DoctorId = 1223, PatientId = 234, TimeFrom = new DateTime(), TimeTo = new DateTime().AddDays(1),
+                    CalenderDate = DateTime.Now
+                }
+            };
         }
 
         public async void BookAppointment()
         {
-            Appointment newAppointment=new Appointment();
-            PatientId = AppointmentVm.}
-    }
-  
+            Appointment newAppointment = new Appointment();
+            //PatientId = AppointmentVm
 
+
+        }
+
+       
+
+        public async void CheckAppointment()
+        {
+            var success = new MessageDialog(" Congratulation Booking Conformed !!");
+            await success.ShowAsync();
+        }
+    }
 }

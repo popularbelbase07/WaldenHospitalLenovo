@@ -28,12 +28,15 @@ namespace WaldenHospitalLenovo.ViewModel
         }
 
         public RelayCommand NewRegistration { get; set; }
+        public RelayCommand appointmentCommand { get; set; }
+        
+
         public RelayCommand SearchCommand { get; set; }
         public ICommand SuggessionSelectPatientQuerySubmitted { get; set; }
         public string SearchListBox { get; set; }
         public string Search { get; set; }
         public RelayCommand Logout { get; set; }
-        public List<Doctor> DoctorName { get; set; }
+        public ObservableCollection<Doctor> DoctorName { get; set; }
         public DateTimeOffset Calender { get; set; }
         public TimeSpan FromTime { get; set; }
         public TimeSpan ToTime { get; set; }
@@ -66,34 +69,46 @@ namespace WaldenHospitalLenovo.ViewModel
             get { return new ObservableCollection<Doctor>(dc.SeeDoctor()); }
         }
 
+       
+
         private DoctorsCatalog dc;
 
         public AppointmentVm()
         {
             SuggessionSelectPatientQuerySubmitted = new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(GoSearching);
             NewRegistration = new RelayCommand(NewRegistrationForm);
+            appointmentCommand= new RelayCommand(makeAppointment);
             SearchCommand = new RelayCommand(SearchPatientNew);
             prc = PatientRegistrationCatalog.Instance;
             Patient = new Patient();
             SearchPatient = prc.Patients;
             Logout = new RelayCommand(NavigatePage);
-            DoctorName = new List<Doctor>();
+            DoctorName = new ObservableCollection<Doctor>();
             dc = new DoctorsCatalog();
+          var   Doctors = dc.SeeDoctor();
             Patients = new ObservableCollection<Patient>();
             //_patients = SearchCatalog.SearchPatient();
             prc= new PatientRegistrationCatalog();
             _from= new TimeSpan();
             _selectedPatient= new Patient();
             _calender = new DateTime();
-         
            DateTime dt = DateTime.Now;
            Calender = new DateTimeOffset(dt.Year , dt.Month , dt.Day , dt.Hour , dt.Minute , dt.Second, new TimeSpan());
            FromTime = new TimeSpan(dt.Day , dt.Hour, dt.Minute);
            ToTime = new TimeSpan(dt.Day, dt.Hour, dt.Minute);
+           AC=new AppointmentCatalog();
+         
 
         }
 
+        public void makeAppointment()
+        {
+            AC.CheckAppointment();
+           
 
+        }
+
+        public AppointmentCatalog AC;
         private Patient _selectedPatient;
 
         public Patient SelectedPatient
@@ -169,21 +184,7 @@ namespace WaldenHospitalLenovo.ViewModel
             FrameNavigate.ActivateFrameworkNavigation(logouttype);
         }
 
-        //public void DateCheck(DateTime datetime)
-        //{
-        //    if (datetime == (DateTime.Now))
-        //    {
-        //        datetime = new DateTime();
-        //    }
-        //    else
-        //    {
-
-        //        var date = new MessageDialog("You must be choose after this Hour !!");
-        //        date.ShowAsync();
-        //    }
-        //}
-
-        // ICommand ..................................
+      // ICommand ..................................
         //public ICommand SuggessionSelectPatientQuerySubmitted1 => new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(GoSearching);
         private void GoSearching(AutoSuggestBoxQuerySubmittedEventArgs args)
         {
@@ -216,7 +217,7 @@ namespace WaldenHospitalLenovo.ViewModel
             //_patients =PatientRegistrationCatalog
         }
         public Appointment PatientId { get; set; }
-        public Appointment  DoctorId { get; set; }
+        public Appointment DoctorId { get; set; }
         public Appointment CalenderDate { get; set; }
         public Appointment TimeFrom { get; set; }
         public Appointment TimeTo { get; set; }

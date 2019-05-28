@@ -23,7 +23,7 @@ namespace WaldenHospitalLenovo.Catalog
             set => _patients = value;
         }
 
-        public  Patient NewPatient { get; set; }
+        public Patient NewPatient { get; set; }
 
         public PatientRegistrationCatalog()
         {
@@ -43,21 +43,21 @@ namespace WaldenHospitalLenovo.Catalog
 
         }
 
-        public  Patient StorePatient(Patient patient)
+        public Patient StorePatient(Patient patient)
         {
-            return NewPatient = patient;
-        }
-        public   Patient GetPatient()
-        {
-            return NewPatient ;
+            patient = new Patient();
+            return patient;
         }
 
-
-
+        public Patient GetPatient()
+        {
+          //_patients.Add();
+          return NewPatient;
+        }
 
         public List<Patient> check(string name)
         {
-            
+           
             List<Patient> mylist= new List<Patient>().ToList();
 
             if (_patients != null)
