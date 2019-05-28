@@ -11,7 +11,7 @@ namespace WaldenHospitalLenovo.Handler
             // Get all Data
             void FetchAllData();
             // Create new resource ( means new data)
-            //This is unimplement method
+            //This is unimplement method for using database 
             void Post();
 
 
