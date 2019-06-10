@@ -34,7 +34,7 @@ namespace WaldenHospitalLenovo.ViewModel
            PrintCommand=new RelayCommand(PrintCard);
            BackToRegistration=new RelayCommand(BackButton);
            Prc = PatientRegistrationCatalog.Instance;
-           IdCard =  Prc.GetPatient();
+           //IdCard =  Prc.GetPatient();
 
        }
 

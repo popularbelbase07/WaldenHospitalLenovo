@@ -135,7 +135,7 @@
             </ComboBox>-->
             </StackPanel>
             <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="BOOK APPOINTMENT" FontSize="25" Width="300" Background="Transparent" BorderThickness="2"/>
+                <Button  Command="{Binding appointmentCommand}" Content="BOOK APPOINTMENT" FontSize="25" Width="300" Background="Transparent" BorderThickness="2"/>
                 <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="500"/>
                 <Button Command ="{Binding NewRegistration}"  Content="NEW REGISTRATION" FontSize="25" Width="300" Background="Transparent" BorderThickness="2" Click="Button_Click" />
             </StackPanel>

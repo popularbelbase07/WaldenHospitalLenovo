@@ -12,7 +12,7 @@ namespace WaldenHospitalLenovo.Model
     {
         #region Instance feilds
 
-        //............................
+        //Instance Field
         private int _id;
         private string _fullName;
         private string _address;

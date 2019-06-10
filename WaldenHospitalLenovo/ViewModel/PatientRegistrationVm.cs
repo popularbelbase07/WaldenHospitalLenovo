@@ -15,12 +15,11 @@ namespace WaldenHospitalLenovo.ViewModel
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string PhoneNumber { get; set; }
-
-        public PatientRegistration NewPatient { get; set; }
-
         public PatientRegistrationCatalog Prc { get; set; }
         public RelayCommand NewRegistration { get; set; }
         public RelayCommand GoBackCommand { get; set; }
+
+        public PatientRegistration NewPatient { get; set; }
 
         public PatientRegistrationVm()
         {

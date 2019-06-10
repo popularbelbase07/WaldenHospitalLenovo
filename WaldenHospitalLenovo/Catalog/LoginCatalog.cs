@@ -1,33 +1,75 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using Windows.Data.Json;
 using WaldenHospitalLenovo.Common;
+using WaldenHospitalLenovo.Handler;
 using WaldenHospitalLenovo.Model;
 using WaldenHospitalLenovo.ViewPage;
 using Windows.UI.Popups;
-using WaldenHospitalLenovo.Common;
+using Windows.Web.Http;
+using Newtonsoft.Json;
 
 namespace WaldenHospitalLenovo.Catalog
 {
-   public  class LoginCatalog :NotifyPropertyChanged
+    public  class LoginCatalog :NotifyPropertyChanged,IRequestHttpHandler<Login>
    {
+        private  const string Uri= "http://localhost:55827/api/Logins";
+        public async void FetchAllData()
+        {
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var response = "";
+                    Task task = Task.Run(async () =>
+                    {
+                        // sends GET request
+                        // ReSharper disable once AccessToDisposedClosure
+                        response = await client.GetStringAsync(new Uri(Uri));
+                    });
+                    // Wait
+                    task.Wait();
+                    // convert Json into Objects
+                    if (response != null)
+                    {
+                       
+                       ListLogin = JsonConvert.DeserializeObject<ObservableCollection<Login>>(response);
+                        // call on property change Interface
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //// Display successful message
+                    var messageDialog = new MessageDialog(ex.Message);
+                    await messageDialog.ShowAsync();
+                }
+            }
+        }
+
+        public void Post()
+        {
+            throw new NotImplementedException();
+        }
         //Instance field
-       private ObservableCollection<Login> _listLogin;
+        private ObservableCollection<Login> _listLogin;
         //Property
        public ObservableCollection<Login> ListLogin
        {
            get { return _listLogin; }
+           set { _listLogin = value; }
        }
       //Constructor
        public LoginCatalog()
        {
-           _listLogin = GetLoginFromDb();
+     ListLogin=new ObservableCollection<Login>();
+     _listLogin = GetLoginFromDb();
+     //FetchAllData();
 
        }
-       public async void CheckLogin(string userName, string password)
+
+            public async void CheckLogin(string userName, string password)
         {
             foreach (var login in ListLogin)
             {
@@ -53,7 +95,7 @@ namespace WaldenHospitalLenovo.Catalog
             }
 
         }
-        // Fake database for login 
+        //// Fake database for login 
         public ObservableCollection<Login> GetLoginFromDb()
         {
             return new ObservableCollection<Login>()

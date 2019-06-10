@@ -10,74 +10,57 @@ namespace WaldenHospitalLenovo.Model
     public class Doctor :NotifyPropertyChanged
     {
         #region Instance Field
-       
-        //private string _name;
-        //private string _specification;
+
+        private string _name;
+        private string _specification;
         #endregion
 
-        //#region Properties
-        //public string Name
-        //{
-        //    get { return _name;}
-        //    set
-        //    {
-        //        _name = value; 
-        //        OnPropertyChanged(nameof(Name));
-        //    }
+        #region Properties
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged(nameof(Name));
+            }
 
-        //}
+        }
 
-        //public string Specification
-        //{
-        //    get { return _specification; }
-        //    set
-        //    {
-        //        _specification = value;
-        //        OnPropertyChanged(nameof(Specification));
-        //    }
-        //}
+        public string Specification
+        {
+            get { return _specification; }
+            set
+            {
+                _specification = value;
+                OnPropertyChanged(nameof(Specification));
+            }
+        }
 
-        //#endregion
+        #endregion
 
-        //#region Constructor
-
-        //public Doctor( string name, string specification)
-        //{
-           
-        //    _name = name;
-        //    _specification = specification;
-         
-        //    OnPropertyChanged(nameof(Name));
-        //    OnPropertyChanged(nameof(Specification));
-        //}
-
-        //public Doctor()
-        //{
-            
-        //}
-        //#endregion
-
-        //public override string ToString()
-        //{
-        //    return $"{_name}-{_specification}";
-        //}
-        public string Name { get; set; }
-        public string Specification { get; set; }
+        #region Constructor
 
         public Doctor(string name, string specification)
         {
-            Name = name;
-            Specification = specification;
+
+            _name = name;
+            _specification = specification;
+
+            OnPropertyChanged(nameof(Name));
+            OnPropertyChanged(nameof(Specification));
         }
 
         public Doctor()
         {
-            
+
         }
+        #endregion
 
         public override string ToString()
         {
-            return $"{Name} - {Specification}";
+            return $"{_name}-{_specification}";
         }
+      
     }
 }

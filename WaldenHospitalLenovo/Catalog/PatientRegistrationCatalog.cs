@@ -23,41 +23,37 @@ namespace WaldenHospitalLenovo.Catalog
             set => _patients = value;
         }
 
-        public  Patient NewPatient { get; set; }
+       public Patient NewPatient { get; set; }
 
         public PatientRegistrationCatalog()
         {
-            //_patients = PatientList();
+           
             NewPatient = new Patient();
             _patients = Patients;
             _patients = new ObservableCollection<Patient>
             {
-                new Patient(1, "John", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
-                new Patient(2, "John", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
-                new Patient(3, "Jimmy", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
-                new Patient(4, "ganga", "Copenhagen 25 Denmark", "FeMale", new DateTime(2019, 05, 13), "71352626"),
-                new Patient(5, "John", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
-                new Patient(6, "khem", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626"),
-                new Patient(7, "zuhair", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71352626")
+                new Patient(1, "John", "Copenhagen 25 Denmark", "Male", new DateTime(2019, 05, 13), "71432661"),
+                new Patient(2, "Mohammed", "Copenhagen 30 Denmark", "Male", new DateTime(2019, 01, 11), "71302026"),
+                new Patient(3, "Jimmy", "Copenhagen 01 Denmark", "Male", new DateTime(2019, 1, 13), "71332606"),
+                new Patient(4, "Ganga", "Copenhagen 07 Denmark", "FeMale", new DateTime(2019, 05, 13), "71512660"),
+                new Patient(5, "Roney", "Copenhagen 03 Denmark", "Male", new DateTime(2019, 05, 13), "71456626"),
+                new Patient(6, "Khem", "Copenhagen 09 Denmark", "Male", new DateTime(2019, 05, 13), "71052696"),
+                new Patient(7, "Zuhair", "Copenhagen 14 Denmark", "Male", new DateTime(2019, 05, 13), "71352626")
+               
             };
-
+            
         }
 
-        public  Patient StorePatient(Patient patient)
+        public Patient StorePatient(Patient _patient)
         {
-            return NewPatient = patient;
+            _patient = new Patient();
+            return _patient;
         }
-        public   Patient GetPatient()
-        {
-            return NewPatient ;
-        }
-
-
 
 
         public List<Patient> check(string name)
         {
-            
+           
             List<Patient> mylist= new List<Patient>().ToList();
 
             if (_patients != null)
@@ -75,9 +71,20 @@ namespace WaldenHospitalLenovo.Catalog
                 return mylist;
             }
             return mylist;
+
         }
-       
-     
+
+
+        //For Id card
+
+
+        //public Patient GetPatient()
+        //{
+
+        //    return NewPatient;
+        //}
+
+
     }
 
 }

@@ -16,29 +16,17 @@ namespace WaldenHospitalLenovo.ViewModel
 {
     public class AppointmentVm : NotifyPropertyChanged
     {
-        private DateTime _calender;
+
+        //For Search engine
         private ObservableCollection<Patient> _patients;
         private string _displayChosenText = "Patient Info";
-        
         private PatientRegistrationCatalog prc;
         public ObservableCollection<Patient> SearchPatient
         {
-            get => SearchCatalog.SearchPatient();
-            set {  }
+            //get => SearchCatalog.SearchPatient();
+            get { return PatientRegistrationCatalog.Instance.Patients;}
+            set { }
         }
-
-        public RelayCommand NewRegistration { get; set; }
-        public RelayCommand SearchCommand { get; set; }
-        public ICommand SuggessionSelectPatientQuerySubmitted { get; set; }
-        public string SearchListBox { get; set; }
-        public string Search { get; set; }
-        public RelayCommand Logout { get; set; }
-        public List<Doctor> DoctorName { get; set; }
-        public DateTimeOffset Calender { get; set; }
-        public TimeSpan FromTime { get; set; }
-        public TimeSpan ToTime { get; set; }
-
-
         public ObservableCollection<Patient> Patients
         {
             get => _patients;
@@ -59,40 +47,66 @@ namespace WaldenHospitalLenovo.ViewModel
                 OnPropertyChanged(nameof(DisplayChosenText));
             }
         }
-
-
+        //For ComboBox Doctor
+        private DoctorsCatalog dc;
         public ObservableCollection<Doctor> Doctors
         {
             get { return new ObservableCollection<Doctor>(dc.SeeDoctor()); }
         }
 
-        private DoctorsCatalog dc;
+        public RelayCommand NewRegistration { get; set; }
+        public RelayCommand appointmentCommand { get; set; }
+        public RelayCommand SearchCommand { get; set; }
+        public ICommand SuggessionSelectPatientQuerySubmitted { get; set; }
+        //public string SearchListBox { get; set; }
+        //public string Search { get; set; }
+        public RelayCommand Logout { get; set; }
+        public ObservableCollection<Doctor> DoctorName { get; set; }
+        public DateTimeOffset Calender { get; set; }
+        public TimeSpan FromTime { get; set; }
+        public TimeSpan ToTime { get; set; }
+
+
+      
+
+        
 
         public AppointmentVm()
         {
+            Patient = new Patient();
+            prc = new PatientRegistrationCatalog();
+            prc = PatientRegistrationCatalog.Instance;
+            SearchPatient = prc.Patients;
+            DoctorName = new ObservableCollection<Doctor>();
+            dc = new DoctorsCatalog();
+            var Doctors = dc.SeeDoctor();
+
             SuggessionSelectPatientQuerySubmitted = new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(GoSearching);
             NewRegistration = new RelayCommand(NewRegistrationForm);
+            appointmentCommand= new RelayCommand(makeAppointment);
             SearchCommand = new RelayCommand(SearchPatientNew);
-            prc = PatientRegistrationCatalog.Instance;
-            Patient = new Patient();
-            SearchPatient = prc.Patients;
-            Logout = new RelayCommand(NavigatePage);
-            DoctorName = new List<Doctor>();
-            dc = new DoctorsCatalog();
+             Logout = new RelayCommand(NavigatePage);
             Patients = new ObservableCollection<Patient>();
-            //_patients = SearchCatalog.SearchPatient();
-            prc= new PatientRegistrationCatalog();
+            //_patients = SearchCatalog.SearchPatient();      
             _from= new TimeSpan();
             _selectedPatient= new Patient();
-            _calender = new DateTime();
-         
            DateTime dt = DateTime.Now;
            Calender = new DateTimeOffset(dt.Year , dt.Month , dt.Day , dt.Hour , dt.Minute , dt.Second, new TimeSpan());
            FromTime = new TimeSpan(dt.Day , dt.Hour, dt.Minute);
            ToTime = new TimeSpan(dt.Day, dt.Hour, dt.Minute);
+           AC=new AppointmentCatalog();
+         
 
         }
 
+        public void makeAppointment()
+        {
+            AC.CheckAppointment();
+           
+
+        }
+
+        public AppointmentCatalog AC;
 
         private Patient _selectedPatient;
 
@@ -102,10 +116,10 @@ namespace WaldenHospitalLenovo.ViewModel
             set
             {
                 _selectedPatient = value;
-                OnPropertyChanged(nameof(SearchPatient));
+                OnPropertyChanged(nameof(SelectedPatient));
             }
         }
-        public Patient Patient { get; set; }
+      
 
         private string _searchkey;
 
@@ -158,9 +172,12 @@ namespace WaldenHospitalLenovo.ViewModel
 
         }
 
+        public Patient Patient { get; set; }
+
         public void GoSearching()
         {
-            SearchPatient?.Where(a => a.FullName.ToUpper().Contains(Patient.FullName.ToUpper()));
+           SearchPatient?.Where(a => a.FullName.ToUpper().Contains(Patient.FullName.ToUpper()));
+          
         }
 
         public void NavigatePage()
@@ -169,21 +186,7 @@ namespace WaldenHospitalLenovo.ViewModel
             FrameNavigate.ActivateFrameworkNavigation(logouttype);
         }
 
-        //public void DateCheck(DateTime datetime)
-        //{
-        //    if (datetime == (DateTime.Now))
-        //    {
-        //        datetime = new DateTime();
-        //    }
-        //    else
-        //    {
-
-        //        var date = new MessageDialog("You must be choose after this Hour !!");
-        //        date.ShowAsync();
-        //    }
-        //}
-
-        // ICommand ..................................
+      // ICommand ..................................
         //public ICommand SuggessionSelectPatientQuerySubmitted1 => new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(GoSearching);
         private void GoSearching(AutoSuggestBoxQuerySubmittedEventArgs args)
         {
@@ -213,13 +216,9 @@ namespace WaldenHospitalLenovo.ViewModel
         }
         public void RefreshPatientList()
         {
-            //_patients =PatientRegistrationCatalog
+            _patients = PatientRegistrationCatalog.Instance.Patients;
         }
-        public Appointment PatientId { get; set; }
-        public Appointment  DoctorId { get; set; }
-        public Appointment CalenderDate { get; set; }
-        public Appointment TimeFrom { get; set; }
-        public Appointment TimeTo { get; set; }
+       
     }
 
 

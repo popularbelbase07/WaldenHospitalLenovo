@@ -75,5 +75,10 @@ namespace WaldenHospitalLenovo.Model
             _to = to;
             _calender = calender;
         }
+
+        public override string ToString()
+        {
+            return $"{PatientId},{DoctorId},{CalenderDate},{TimeFrom},{TimeTo}";
+        }
   }
 }

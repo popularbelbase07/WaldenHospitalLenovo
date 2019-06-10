@@ -123,12 +123,12 @@
     <Compile Include="Catalog\DoctorsCatalog.cs" />
     <Compile Include="Catalog\LoginCatalog.cs" />
     <Compile Include="Catalog\PatientRegistrationCatalog.cs" />
-    <Compile Include="Catalog\SearchCatalog.cs" />
     <Compile Include="Common\DateTimeConverter.cs" />
     <Compile Include="Common\FrameNavigate.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\NotifyPropertyChanged.cs" />
     <Compile Include="Common\RelayCommandArgs.cs" />
+    <Compile Include="Handler\IRequestHttpHandler.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Login.cs" />
@@ -186,6 +186,9 @@
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="ViewPage\AppointmentPageWald.xaml">
@@ -209,6 +212,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
