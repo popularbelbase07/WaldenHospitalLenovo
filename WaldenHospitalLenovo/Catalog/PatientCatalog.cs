@@ -10,6 +10,6 @@ namespace WaldenHospitalLenovo.Catalog
     public class PatientCatalog
     {
         private List<Patient> _listPatient;
-        
+        public List
     }
 }
