@@ -16,6 +16,103 @@ namespace WaldenHospitalLenovo.ViewModel
 {
     public class AppointmentVm : NotifyPropertyChanged
     {
+        // Create these properties for Display ListView
+        private string _id  ;
+
+        public string Id 
+        {
+            get => _id ;
+            set
+            {
+;                _id = value;
+                OnPropertyChanged(nameof(Id));
+            }
+        }
+
+        private string _name  ;
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                 _name = value;
+                 OnPropertyChanged(nameof(Name));
+            }
+        }
+
+        private string _doctorName;
+
+        public string DoctorName
+        {
+            get => _doctorName;
+            set
+            {
+                _doctorName = value;
+                OnPropertyChanged(nameof(DoctorName));
+            }
+        }
+        private string _doctorSpecification;
+
+        public string DoctorSpecification
+        {
+            get => _doctorSpecification;
+            set
+            {
+                _doctorSpecification = value;
+                OnPropertyChanged(nameof(DoctorSpecification));
+            }
+        }
+
+      
+
+        private Doctor _comboBoxSelectedItem;
+
+        public Doctor ComboBoxSelectedItem
+        {
+            get { return _comboBoxSelectedItem; }
+            set
+            {
+                _comboBoxSelectedItem = value;
+                OnPropertyChanged(nameof(ComboBoxSelectedItem));
+                DoctorName = ComboBoxSelectedItem.Name;
+                DoctorSpecification = ComboBoxSelectedItem.Specification;
+            }
+        }
+        
+        public DateTime _SelectedDateTime;
+
+        public DateTime SelectedDateTime
+        {
+            get => _SelectedDateTime;
+            set
+            {
+                _SelectedDateTime = value;
+                _SelectedDateTime = SelectedDateTime.Date;
+                OnPropertyChanged(nameof(SelectedDateTime));
+            }
+        }
+        public TimeSpan _SelectedTimefromSpan;
+
+        public TimeSpan SelectedTimeFromSpan
+        {
+            get { return _SelectedTimefromSpan; }
+            set
+            {
+                _SelectedTimefromSpan = value;
+                OnPropertyChanged(nameof(SelectedTimeFromSpan));
+            }
+        }
+
+        private TimeSpan _selectedToTime;
+        public TimeSpan SelectedTimeToSpan
+        {
+            get { return _selectedToTime; }
+            set
+            {
+                _selectedToTime = value;
+                OnPropertyChanged(nameof(SelectedTimeFromSpan));
+            }
+        }
 
         //For Search engine
         private ObservableCollection<Patient> _patients;
@@ -49,22 +146,54 @@ namespace WaldenHospitalLenovo.ViewModel
         }
         //For ComboBox Doctor
         private DoctorsCatalog dc;
+         //public ObservableCollection<Doctor> DoctorName { get; set; }
         public ObservableCollection<Doctor> Doctors
         {
             get { return new ObservableCollection<Doctor>(dc.SeeDoctor()); }
         }
 
         public RelayCommand NewRegistration { get; set; }
-        public RelayCommand appointmentCommand { get; set; }
+        public RelayCommand AppointmentCommand { get; set; }
         public RelayCommand SearchCommand { get; set; }
         public ICommand SuggessionSelectPatientQuerySubmitted { get; set; }
+        
         //public string SearchListBox { get; set; }
         //public string Search { get; set; }
         public RelayCommand Logout { get; set; }
-        public ObservableCollection<Doctor> DoctorName { get; set; }
-        public DateTimeOffset Calender { get; set; }
-        public TimeSpan FromTime { get; set; }
-        public TimeSpan ToTime { get; set; }
+        private DateTimeOffset _calender;
+
+        public DateTimeOffset Calender
+        {
+            get { return _calender;}
+            set
+            {
+                _calender = value;
+                OnPropertyChanged(nameof(Calender));
+            }
+        }
+
+        private TimeSpan _fromHour;
+        public TimeSpan FromTime
+        {
+            get { return _fromHour;}
+            set
+            {
+                _fromHour = value;
+                OnPropertyChanged(nameof(FromTime));
+            }
+        }
+
+        private TimeSpan _toTime;
+
+        public TimeSpan ToTime
+        {
+            get { return _toTime;}
+            set
+            {
+                _toTime = value;
+                OnPropertyChanged(nameof(ToTime));
+            }
+        }
 
 
       
@@ -73,21 +202,21 @@ namespace WaldenHospitalLenovo.ViewModel
 
         public AppointmentVm()
         {
-            Patient = new Patient();
+            //Patient = new Patient();
             prc = new PatientRegistrationCatalog();
             prc = PatientRegistrationCatalog.Instance;
             SearchPatient = prc.Patients;
-            DoctorName = new ObservableCollection<Doctor>();
+            //DoctorName = new ObservableCollection<Doctor>();
             dc = new DoctorsCatalog();
             var Doctors = dc.SeeDoctor();
-
+            
             SuggessionSelectPatientQuerySubmitted = new RelayCommandArgs<AutoSuggestBoxQuerySubmittedEventArgs>(GoSearching);
             NewRegistration = new RelayCommand(NewRegistrationForm);
-            appointmentCommand= new RelayCommand(makeAppointment);
-            SearchCommand = new RelayCommand(SearchPatientNew);
+            AppointmentCommand= new RelayCommand(MakeAppointment);
+            //SearchCommand = new RelayCommand(SearchPatientNew);
              Logout = new RelayCommand(NavigatePage);
             Patients = new ObservableCollection<Patient>();
-            //_patients = SearchCatalog.SearchPatient();      
+                 
             _from= new TimeSpan();
             _selectedPatient= new Patient();
            DateTime dt = DateTime.Now;
@@ -99,7 +228,13 @@ namespace WaldenHospitalLenovo.ViewModel
 
         }
 
-        public void makeAppointment()
+        private void ComboSelectedItem(SelectionChangedEventArgs obj)
+        {
+           
+            throw new NotImplementedException();
+        }
+
+        public void MakeAppointment()
         {
             AC.CheckAppointment();
            
@@ -147,23 +282,23 @@ namespace WaldenHospitalLenovo.ViewModel
         }
 
 
-        private List<Patient>  _found;
-        public List<Patient> Found
-        {
-            get { return _found; }
-            set
-            {
-                _found = value; 
-                OnPropertyChanged(nameof(Found));
-            }
-        }
+        //private List<Patient>  _found;
+        ////public List<Patient> Found
+        ////{
+        ////    get { return _found; }
+        ////    set
+        ////    {
+        ////        _found = value; 
+        ////        OnPropertyChanged(nameof(Found));
+        ////    }
+        ////}
 
-        public void SearchPatientNew()
-        {
-           Found= prc.check(SearchKey);
+        ////public void SearchPatientNew()
+        ////{
+        ////   Found= prc.check(SearchKey);
 
 
-        }
+        ////}
 
         public void NewRegistrationForm()
         {
@@ -172,13 +307,13 @@ namespace WaldenHospitalLenovo.ViewModel
 
         }
 
-        public Patient Patient { get; set; }
+        //public Patient Patient { get; set; }
 
-        public void GoSearching()
-        {
-           SearchPatient?.Where(a => a.FullName.ToUpper().Contains(Patient.FullName.ToUpper()));
+        //public void GoSearching()
+        //{
+        //   SearchPatient?.Where(a => a.FullName.ToUpper().Contains(Patient.FullName.ToUpper()));
           
-        }
+        //}
 
         public void NavigatePage()
         {
@@ -196,6 +331,8 @@ namespace WaldenHospitalLenovo.ViewModel
                 string name = ((Patient)(args.ChosenSuggestion)).FullName.ToString();
                 // when we select patient from suggestbox it display id and name on textbox
                 DisplayChosenText = id + "-" + name;
+                Id = id;
+                Name = name;
             }
             else
             {
@@ -218,9 +355,25 @@ namespace WaldenHospitalLenovo.ViewModel
         {
             _patients = PatientRegistrationCatalog.Instance.Patients;
         }
-       
-    }
 
+        private void ComboSelectedItem(object sender , SelectionChangedEventArgs args)
+        {
+            
+            // Get the instance of ComboBox
+            ComboBox comboBox = sender as ComboBox;
+
+            // Get the ComboBox selected item text
+            string selectedItems = comboBox?.SelectedItem?.ToString();
+
+
+
+
+        }
+
+
+
+    }
+        
 
 }
 

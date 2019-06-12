@@ -13,7 +13,7 @@ namespace WaldenHospitalLenovo.Model
 
         private string _name;
         private string _specification;
-        #endregion
+        #endregion  
 
         #region Properties
         public string Name

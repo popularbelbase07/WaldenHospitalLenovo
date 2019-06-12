@@ -34,15 +34,18 @@ using WaldenHospitalLenovo.Model;
             };
         }
 
-        public async void BookAppointment()
+        public  void BookAppointment()
         {
             Appointment newAppointment = new Appointment();
-            //PatientId = AppointmentVm
+            newAppointment.PatientId.ToString();
+            newAppointment.DoctorId.ToString();
+            newAppointment.CalenderDate.ToLocalTime();
+            newAppointment.TimeTo.Hour.ToString();
 
 
         }
 
-       
+
 
         public async void CheckAppointment()
         {

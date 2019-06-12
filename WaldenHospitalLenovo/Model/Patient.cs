@@ -17,7 +17,7 @@ namespace WaldenHospitalLenovo.Model
         private string _fullName;
         private string _address;
         private string _gender;
-        private DateTime _dateOfBirth;
+        private readonly  DateTime _dateOfBirth;
         private string _phoneNumber;
 
         #endregion

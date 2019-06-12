@@ -12,6 +12,8 @@ namespace WaldenHospitalLenovo.ViewModel
 {
    public class IdCardVm:NotifyPropertyChanged
    {
+       
+
        private Patient _card;
        public RelayCommand PrintCommand { get; set; }
        public RelayCommand BackToRegistration { get; set; }
@@ -28,13 +30,14 @@ namespace WaldenHospitalLenovo.ViewModel
            }
        }
 
-       public IdCardVm()
+       public IdCardVm( )
        {
            _card=new Patient();
            PrintCommand=new RelayCommand(PrintCard);
            BackToRegistration=new RelayCommand(BackButton);
            Prc = PatientRegistrationCatalog.Instance;
-           //IdCard =  Prc.GetPatient();
+           IdCard =  Prc.GetPatient();
+           
 
        }
 

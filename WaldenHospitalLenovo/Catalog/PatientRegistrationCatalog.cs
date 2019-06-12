@@ -44,14 +44,14 @@ namespace WaldenHospitalLenovo.Catalog
             
         }
 
-        public Patient StorePatient(Patient _patient)
+        public void StorePatient(Patient _patient)
         {
-            _patient = new Patient();
-            return _patient;
+            
+            NewPatient = _patient;
         }
 
 
-        public List<Patient> check(string name)
+        public List<Patient> Check(string name)
         {
            
             List<Patient> mylist= new List<Patient>().ToList();
@@ -78,11 +78,11 @@ namespace WaldenHospitalLenovo.Catalog
         //For Id card
 
 
-        //public Patient GetPatient()
-        //{
+        public Patient GetPatient()
+        {
 
-        //    return NewPatient;
-        //}
+            return NewPatient;
+        }
 
 
     }

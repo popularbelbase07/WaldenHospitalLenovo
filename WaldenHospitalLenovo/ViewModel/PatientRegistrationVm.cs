@@ -19,11 +19,11 @@ namespace WaldenHospitalLenovo.ViewModel
         public RelayCommand NewRegistration { get; set; }
         public RelayCommand GoBackCommand { get; set; }
 
-        public PatientRegistration NewPatient { get; set; }
+        public Patient NewPatient { get; set; }
 
         public PatientRegistrationVm()
         {
-            NewPatient = new PatientRegistration();
+            NewPatient = new Patient();
             Prc = PatientRegistrationCatalog.Instance;
             NewRegistration =new RelayCommand(CreatePatientIdCard);
             GoBackCommand = new RelayCommand(GoBack);
@@ -36,6 +36,7 @@ namespace WaldenHospitalLenovo.ViewModel
                 Patient newPatient = new Patient(NewPatient.ID, NewPatient.FullName, NewPatient.Address, NewPatient.Gender, NewPatient.DateOfBirth, NewPatient.PhoneNumber);
                 Prc.Patients?.Add(newPatient);
                 Prc.StorePatient(newPatient);
+
                 Type type = typeof(PatientIdCard);
                 FrameNavigate.ActivateFrameworkNavigation(type);
 
